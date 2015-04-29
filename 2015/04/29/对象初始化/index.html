@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>对象初始化 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="对象初始化分配对象(为对象分配内存)“分配(allocation)是⼀一个新对象诞⽣生的过程。是从操作系统获得⼀一块内存并将其 指定为存放对象的实例变量的位置。向某个类发送 alloc 消息的结果,就是为该类 分配⼀一块⾜足够⼤大的内存,以存放该类的全部实例变量。“分配内存时,alloc ⽅方法将这块内存区域全部初始化为0。所有的 BOOL 类型变量被 初始化为 NO,所有的 int 类型变量被初">
+<meta property="og:type" content="article">
+<meta property="og:title" content="对象初始化">
+<meta property="og:url" content="http://yoursite.com/2015/04/29/对象初始化/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="对象初始化分配对象(为对象分配内存)“分配(allocation)是⼀一个新对象诞⽣生的过程。是从操作系统获得⼀一块内存并将其 指定为存放对象的实例变量的位置。向某个类发送 alloc 消息的结果,就是为该类 分配⼀一块⾜足够⼤大的内存,以存放该类的全部实例变量。“分配内存时,alloc ⽅方法将这块内存区域全部初始化为0。所有的 BOOL 类型变量被 初始化为 NO,所有的 int 类型变量被初">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="对象初始化">
+<meta name="twitter:description" content="对象初始化分配对象(为对象分配内存)“分配(allocation)是⼀一个新对象诞⽣生的过程。是从操作系统获得⼀一块内存并将其 指定为存放对象的实例变量的位置。向某个类发送 alloc 消息的结果,就是为该类 分配⼀一块⾜足够⼤大的内存,以存放该类的全部实例变量。“分配内存时,alloc ⽅方法将这块内存区域全部初始化为0。所有的 BOOL 类型变量被 初始化为 NO,所有的 int 类型变量被初">
+  
+    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="q" value="site:http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-对象初始化" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/29/对象初始化/" class="article-date">
+  <time datetime="2015-04-29T11:39:36.000Z" itemprop="datePublished">2015-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      对象初始化
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="对象初始化">对象初始化</h1><h2 id="分配对象(为对象分配内存)">分配对象(为对象分配内存)</h2><h4 id="“分配(allocation)是⼀一个新对象诞⽣生的过程。是从操作系统获得⼀一块内存并将其_指定为存放对象的实例变量的位置。向某个类发送_alloc_消息的结果,就是为该类_分配⼀一块⾜足够⼤大的内存,以存放该类的全部实例变量。">“分配(allocation)是⼀一个新对象诞⽣生的过程。是从操作系统获得⼀一块内存并将其 指定为存放对象的实例变量的位置。向某个类发送 alloc 消息的结果,就是为该类 分配⼀一块⾜足够⼤大的内存,以存放该类的全部实例变量。</h4><h4 id="“分配内存时,alloc_⽅方法将这块内存区域全部初始化为0。所有的_BOOL_类型变量被_初始化为_NO,所有的_int_类型变量被初始化为_0,所有的_float_类型变量被初始化_为_0-0,所有的指针被初始化为_nil。">“分配内存时,alloc ⽅方法将这块内存区域全部初始化为0。所有的 BOOL 类型变量被 初始化为 NO,所有的 int 类型变量被初始化为 0,所有的 float 类型变量被初始化 为 0.0,所有的指针被初始化为 nil。</h4><h2 id="初始化对象">初始化对象</h2><h3 id="“刚刚分配(alloc)的对象需要经过初始化(initialization)才能使⽤用">“刚刚分配(alloc)的对象需要经过初始化(initialization)才能使⽤用</h3><h4 id="因为初始化⽅方法返回的对象可能与分配的对象不同">因为初始化⽅方法返回的对象可能与分配的对象不同</h4><h3 id="“为什么init⽅方法会返回不同的对象?">“为什么init⽅方法会返回不同的对象?</h3><p>￼</p>
+<h4 id="Objective-C有两种创建新对象的不同⽅方法:">Objective-C有两种创建新对象的不同⽅方法:</h4><h4 id="这两种⽅方法是等价的,不过,通常的_Cocoa_惯例是使⽤用alloc和init,⽽而不使⽤用_new。">这两种⽅方法是等价的,不过,通常的 Cocoa 惯例是使⽤用alloc和init,⽽而不使⽤用 new。</h4><pre><code>￼￼<span class="number">1.</span> [类名 <span class="atom">new</span>];
+<span class="number">2.</span> [[类名 <span class="atom">alloc</span>] <span class="atom">init</span>];    
+￼<span class="name">Car</span> *<span class="atom">car</span> = [[<span class="name">Car</span> <span class="atom">alloc</span>] <span class="atom">init</span>];       // <span class="atom">right</span>*
+ <span class="name">V</span>.<span class="name">S</span>.
+<span class="name">Car</span> *<span class="atom">car</span> = [<span class="name">Car</span> <span class="atom">alloc</span>];[<span class="atom">car</span> <span class="atom">init</span>];   // <span class="atom">wrong</span>*
+</code></pre><p>￼<br>￼<br>￼</p>
+<h3 id="￼诸如NSString和NSArray这样的类实际上是类簇,由于init⽅方法可以接收参数,因此,其代码能检查_接收的参数,并决定返回类簇中哪⼀一个类的对象更合适。⽐比如,参数是⽂文本和参数是阿拉伯数字,返回的_可能就是不同的类">￼诸如NSString和NSArray这样的类实际上是类簇,由于init⽅方法可以接收参数,因此,其代码能检查 接收的参数,并决定返回类簇中哪⼀一个类的对象更合适。⽐比如,参数是⽂文本和参数是阿拉伯数字,返回的 可能就是不同的类</h3><p>￼</p>
+<h3 id="编写初始化方法">编写初始化方法</h3><pre><code><span class="keyword">if</span> (<span class="keyword">self</span> = [<span class="keyword">super</span> <span class="keyword">init</span>]) {
+</code></pre><h3 id="便利初始化方法">便利初始化方法</h3><h4 id="“许多类包含便利初始化⽅方法(convenience_initializer),它们是⽤用来完成某些额外_⼯工作的初始化⽅方法,可以减少你完成这些⼯工作的⿇麻烦。">“许多类包含便利初始化⽅方法(convenience initializer),它们是⽤用来完成某些额外 ⼯工作的初始化⽅方法,可以减少你完成这些⼯工作的⿇麻烦。</h4><h3 id="指定初始化方法">指定初始化方法</h3><h4 id="“指定初始化⽅方法(designated_initializer),指在类中出现2个或2个以上便利初始_化⽅方法时,把类中的某个初始化⽅方法被指派为指定初始化⽅方法。_该类的所有初始化⽅方_法使⽤用指定初始化⽅方法执⾏行初始化操作。⼦子类使⽤用其超类的指定初始化⽅方法实现超类的初始化操_作。_通常,_接受参数最多的初始化⽅方法最终成为指定初始化⽅方法。">“指定初始化⽅方法(designated initializer),指在类中出现2个或2个以上便利初始 化⽅方法时,把类中的某个初始化⽅方法被指派为指定初始化⽅方法。 该类的所有初始化⽅方 法使⽤用指定初始化⽅方法执⾏行初始化操作。⼦子类使⽤用其超类的指定初始化⽅方法实现超类的初始化操 作。 通常, 接受参数最多的初始化⽅方法最终成为指定初始化⽅方法。</h4><h3 id="初始化方法规则">初始化方法规则</h3><p>￼￼</p>
+<h3 id="￼-_(id)_initWithFormat:_(NSString_*)_format,_…;">￼- (id) initWithFormat: (NSString *) format, …;</h3><h3 id="-_(id)_initWithContentOfFile:_(NSString_*)_path;">- (id) initWithContentOfFile: (NSString *) path;</h3><pre><code>￼￼1. 如果不需要设置任何状态,则不需要为你⾃自⼰己的类创建初始化⽅方法 法。其他的初始化⽅方法使⽤用指定初始化⽅方法来实现。
+￼2. 如果初始化⽅方法不⽌止⼀一个,则需要选择⼀一个作为指定初始化⽅方法
+<span class="bullet">3. </span>如果创建了⼀一个指定初始化⽅方法,则⼀一定要在你⾃自⼰己的指定初始化⽅方法中调⽤用超类的指定初始化⽅方
+</code></pre><p>￼</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/29/对象初始化/" data-id="ci92ob49h0002haj2n6xvvdw0" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2015/04/29/画图知识点/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">画图知识点</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2015/04/29/对象初始化/">对象初始化</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/29/画图知识点/">画图知识点</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/29/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2015 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
