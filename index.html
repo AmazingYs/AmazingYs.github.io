@@ -61,6 +61,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/29/实现/" class="article-date">
+  <time datetime="2015-04-29T11:49:46.000Z" itemprop="datePublished">2015-04-29</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/29/实现/">实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="声明与实现_c_and_oc">声明与实现        c and oc</h1><h3 id="1-关于NS、@">1.关于NS、@</h3><p>历史遗留的标示符 如：NSString : 本质就是String 只不过在前面加个NS 无具体含义<br>@ ：如果想要输出字符串 必须采用OC的语法 即 ： @”字符串”</p>
+<h3 id="2-OC中BOOL类型有两种：">2.OC中BOOL类型有两种：</h3><pre><code><span class="tag">a</span>. YES : <span class="number">1</span>
+<span class="tag">b</span>. NO  : <span class="number">0</span>
+</code></pre><h3 id="3-OC是面向对象的编程语言。">3.OC是面向对象的编程语言。</h3><pre><code><span class="tag">a</span>. 定义类
+    @<span class="tag">interface</span> 类名 ：<span class="tag">NSObject</span> 
+    {    
+        <span class="comment">//声明类的属性</span>
+        <span class="comment">//成员变量（实例变量）</span>
+    }
+    <span class="comment">//声明函数</span>
+    <span class="tag">-</span> (数据类型）方法名 : (数据类型) 形参名；
+    <span class="variable">@end</span> <span class="comment">//表示类的声明的结束</span>
+b.    实现类
+    <span class="variable">@implementation</span> 类名
+     - （数据类型） 方法名 ：（数据类型） 形参名
+     {
+         <span class="comment">//具体代码</span>
+     }
+     <span class="comment">//OC中提供了一个description函数供类的对象调用，方法里面可以写满足要求的代码</span>
+     - （数据类型）description 
+     {
+         <span class="comment">//具体代码</span>
+     }
+    <span class="variable">@end</span> <span class="comment">//表示类的实现的结束</span>
+
+c. 创建类对象，并调用对象的实例变量以及在类中声明和实现的方法（一般在main方法里面实现）
+    类名 *对象名 = [类名 new];<span class="comment">//[类名 new] 表示类名发布一条new消息，创建一个类对象，然后赋给左边的对象名</span>
+    [对象名 方法名]; <span class="comment">//表示对象发布一条消息，调用类中的方法</span>
+d. 格式化标示符 %@ : 表示输出一个类对象    
+</code></pre><h3 id="4-个人关于面向过程和面向对象的认识">4.个人关于面向过程和面向对象的认识</h3><pre><code>面向过程是在解决某一问题时，采用过程化、结构化的设计方法，即先定义一些要用到的数据结构，这些数据都是为了后面的函数而定义的，然后一个函数或多个函数实现一个功能，最终达到解决问题的目的。而面向对象的设计思想是对于某些具有共同属性、行为的事物，将它们的共同属性、行为抽取出来，抽象化为一个类（OC中类也是一种数据类型），然后在类的实例化时根据不同的需要，实例化为不同的对象，从而实现不同的行为。面向对象的思想中，行为（方法）都是为数据（类）服务的，都是为了描述类而存在的，这是于面向对象不同的一点，而且采用面向对象的设计方法，可以减少许多冗余的代码，使代码更简洁，提高维护性等。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/29/实现/" data-id="ci92olb660003l7j2nkxzvgf4" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Foundation" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/29/Foundation/" class="article-date">
@@ -209,7 +275,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/29/Foundation/" data-id="ci92oj35e0000jxj2bw37tu2s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/29/Foundation/" data-id="ci92olb5h0000l7j2behlfojn" class="article-share-link">Share</a>
       
       
     </footer>
@@ -254,7 +320,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/29/复合/" data-id="ci92oj3630003jxj2xs133m2v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/29/复合/" data-id="ci92olb670004l7j2fzjwgqey" class="article-share-link">Share</a>
       
       
     </footer>
@@ -304,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/29/对象初始化/" data-id="ci92oj3610002jxj2u8ryec5z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/29/对象初始化/" data-id="ci92olb650002l7j2j3rj30uv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -450,7 +516,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/29/画图知识点/" data-id="ci92oj3600001jxj2h37dsoy5" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/29/画图知识点/" data-id="ci92olb630001l7j2smyuqk3e" class="article-share-link">Share</a>
       
       
     </footer>
@@ -495,7 +561,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/29/hello-world/" data-id="ci92oj3640004jxj26h7ti0uq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/29/hello-world/" data-id="ci92olb680005l7j2x1tw8ghm" class="article-share-link">Share</a>
       
       
     </footer>
@@ -520,7 +586,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -530,6 +596,10 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/29/实现/">实现</a>
+          </li>
         
           <li>
             <a href="/2015/04/29/Foundation/">Foundation</a>
@@ -545,10 +615,6 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
         
           <li>
             <a href="/2015/04/29/画图知识点/">画图知识点</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/29/hello-world/">Hello World</a>
           </li>
         
       </ul>
