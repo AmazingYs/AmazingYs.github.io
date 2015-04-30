@@ -61,10 +61,10 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-OC" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/04/30/Blog/" class="article-date">
-  <time datetime="2015-04-30T03:28:25.000Z" itemprop="datePublished">2015-04-30</time>
+    <a href="/2015/04/30/OC/" class="article-date">
+  <time datetime="2015-04-30T03:49:42.000Z" itemprop="datePublished">2015-04-30</time>
 </a>
     
   </div>
@@ -75,7 +75,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/30/Blog/">Blog</a>
+      <a class="article-title" href="/2015/04/30/OC/">OC</a>
     </h1>
   
 
@@ -83,46 +83,211 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="setUpBlog">setUpBlog</h1><h3 id="安装brew">安装brew</h3><p>执行命令</p>
-<pre><code><span class="number">1</span>  $ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
-</code></pre><h3 id="安装wget">安装wget</h3><p>执行命令</p>
-<pre><code><span class="number">1</span>  $ brew <span class="keyword">install</span> wget
-</code></pre><h3 id="安装nvm(node-js的版本管理工具)">安装nvm(node.js的版本管理工具)</h3><pre><code><span class="number">1</span>  $ wget -qO- http<span class="variable">s:</span>//raw.github.<span class="keyword">com</span>/creationix/nvm/master/install.<span class="keyword">sh</span> | <span class="keyword">sh</span>
-</code></pre><h3 id="添加如下内容到~/-zshrc_配置文件">添加如下内容到~/.zshrc 配置文件</h3><pre><code><span class="number">1</span>  [ -s <span class="string">"/Users/<span class="escape">`u</span>sers<span class="escape">`/</span>.nvm/nvm.sh"</span> ] &amp;&amp; . <span class="string">"/Users/<span class="escape">`u</span>sers<span class="escape">`/</span>.nvm/nvm.sh"</span> # This loads nvm
-</code></pre><h3 id="安装node-js(通过nvm安装)">安装node.js(通过nvm安装)</h3><pre><code><span class="number">1</span>  $ nvm <span class="keyword">install</span> <span class="number">0.10</span>
-</code></pre><h3 id="安装hexo">安装hexo</h3><pre><code><span class="number">1</span>  $ npm <span class="keyword">install</span> -g hexo
-</code></pre><h3 id="创建hexo文件夹，并安装hexo组件">创建hexo文件夹，并安装hexo组件</h3><pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo init hexo
-<span class="number">2</span>  <span class="variable">$ </span>cd hexo
-<span class="number">3</span>  <span class="variable">$ </span>npm install
-</code></pre><h3 id="查看本地">查看本地</h3><p>输⼊入如下命令后,打开浏览器,并输⼊入localhost:4000来查看</p>
-<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo g
-<span class="number">2</span>  <span class="variable">$ </span>hexo s
-</code></pre><h3 id="登录github-com注册github账号">登录github.com注册github账号</h3><h3 id="创建与github同名的repository">创建与github同名的repository</h3><p>eg : github账号名位RicheyLee,则创建RicheyLee.github.io</p>
-<h3 id="部署到github上">部署到github上</h3><p>如下所示编辑_config.yml</p>
-<pre><code><span class="number">1</span>   <span class="string">deploy:</span> 
-<span class="number">2</span>  <span class="string">type:</span> github
-<span class="number">3</span>  <span class="string">repository:</span> git<span class="annotation">@github</span>.<span class="string">com:</span>dorayox/dorayox.github.io.git
-<span class="number">4</span>  <span class="string">branch:</span> master
-</code></pre><p>输入如下命令，完成到github的部署，之后打开浏览器并输入RicheyLee.github.io来查看</p>
-<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo g
-<span class="number">2</span>  <span class="variable">$ </span>hexo d
-</code></pre><h2 id="上传文件到blog">上传文件到blog</h2><p>在hexo目录下，创建新文件</p>
-<p>eg : 创建新文件test</p>
-<pre><code><span class="number">1</span>  $ hexo <span class="keyword">new</span> test
-</code></pre><p>默认创建的新文件后缀问 .md文件，存在hexo/source/_posts/目录下</p>
-<p>使用MOU打开新建的文件并完成编辑</p>
-<pre><code><span class="number">1</span>  $ mou <span class="keyword">source</span><span class="regexp">/_posts/</span>test.md
-</code></pre><p>将新建的文件声称网页</p>
-<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo g
-</code></pre><p>上传到blog</p>
-<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo d
-</code></pre><p>登录blog查看是否上传成功</p>
-<pre><code><span class="string">http:</span><span class="comment">//RicheyLee.github.io</span>
+        <p><img src="http://www.52nx.net/article/UploadPic/2011-10/2011101515463073132.png" alt="image"></p>
+<h2 id="NSLog_与_printf的不同">NSLog 与 printf的不同</h2><pre><code><span class="number">1.</span> <span class="built_in">NSLog</span>接收oc字符串作为参数，printf接收c语言的字符串作为参数
+<span class="number">2.</span> <span class="built_in">NSLog</span>输出后会自动换行，printf在输出后不会自动换行
+<span class="number">3.</span> 使用<span class="built_in">NSLog</span>时，需要包含头文件<span class="preprocessor">#import <span class="title">&lt;Foundition/Foundition.h&gt;</span>；而使用printf时，需要包含头文件#include<span class="title">&lt;stdio.h&gt;</span></span>
+<span class="number">4.</span> <span class="built_in">NSLog</span>可以输出日期，时间戳，进程号等信息，而printf不能输出这些信息
+</code></pre><h2 id="常用术语">常用术语</h2><p>面向过程 ： Procedure Oriented</p>
+<p>面向对象 ： Object Oriented ，<strong>简称OO</strong></p>
+<p>面向编程 ： Object Oriented Programming，<strong>简称OOP</strong></p>
+<h2 id="OC_语法">OC 语法</h2><ol>
+<li><strong>类的声明</strong></li>
+</ol>
+<pre><code><span class="class"><span class="keyword">@interface</span> 类名：父类（默认为 <span class="title">NSObject</span> 该类时根类）</span>
+
+{
+
+    定义成员变量；（默认情况下，成员变量为protect类型，）
+
+}    
+
+（ 可以用<span class="keyword">@public</span>将其定义为public类型，此时定义的属性或变量允许被外界访问）
+<span class="keyword">@property</span>(<span class="keyword">nonatomic</span>/atomic,<span class="keyword">readonly</span>/<span class="keyword">readwrite</span>,<span class="keyword">assign</span>/<span class="keyword">strong</span>/retain/wake)类型 属性名；（定义属性可以自动生成setter和getter方法）
+
+声明类方法；（标识 ＋ 该方法向类发消息）
+
+声明实例方法； （标识 － 该方法向对象发消息） 声明类方法时 返回值最好定义为`instancetype`类型
+
+<span class="keyword">@end</span>
+</code></pre><ol>
+<li><p><strong>类的实现</strong></p>
+<pre><code> <span class="variable">@implemention</span> 类名
+
+ － 实例方法
+｛
+        实现代码； 
+ ｝
+
+ ＋ 类fangfa
+｛ 
+        实现代码； 
+ ｝
+
+ 重写父类方法；
+ 如：descripition、 dealloc、init等
+
+ <span class="variable">@end</span>
+</code></pre><p>3.<strong>创建对象</strong></p>
+<pre><code>1.包含所创建类的头文件
+2.类名 ＊对象名；
+2.1 类名 ＊对象名 ＝ ［［类名 alloc］init］；（创建对象并为其分配内存、初始化）
+2.2 类名 ＊对象名 ＝ ［类名 new］；（每次都会创建出新的对象，并且返回对象的地址。）
+<span class="bullet">3. </span>给对象赋值；（可以调用相应的类方法）；
+<span class="bullet">4. </span>给对象发消息，完成所需要进行的操作；［对象 方法］；
+</code></pre></li>
+<li><p><strong>匿名对象</strong></p>
+<pre><code>方法调用：
+
+    ［［类名 <span class="literal">new</span>］方法］；／［［［类名 alloc］init］方法］；
+
+属性访问：
+
+    ［类名 <span class="literal">new</span>］<span class="subst">-&gt;</span>属性 ＝ 赋值；（外界访问定义为<span class="keyword">public</span>类型的属性）
+</code></pre></li>
+</ol>
+<h2 id="OC方法和函数的区别">OC方法和函数的区别</h2><pre><code><span class="number">1.</span> OC方法的声明只能在<span class="annotation">@interface</span> 和 <span class="annotation">@end</span>之间，只能在<span class="annotation">@implementation</span> 和 <span class="annotation">@end</span>之间。即OC方法独立于类存在。
+<span class="number">2.</span> C函数不属于类，跟类没有联系，C函数所有权只属于定义函数的文件
+<span class="number">3.</span> C函数不能访问OC对象的成员变量。
+</code></pre><h2 id="OC语法细节">OC语法细节</h2><pre><code><span class="bullet">1. </span>成员变量不能在｛｝中进行初始化、不能直接拿去访问
+<span class="bullet">2. </span>方法的声明不能写在@end之后
+<span class="bullet">3. </span>方法不能当作函数一样调用
+<span class="bullet">4. </span>成员变量、方法不能用static等关键字进行修饰
+</code></pre><h2 id="OC方法注意点">OC方法注意点</h2><pre><code>方法只有声明，没有实现（经典错误，系统提示警告）
+方法没有声明，只有实现（编译器警告，但是可以调用，OC的弱语法）
+编译的时候，访问没有定义的成员变量直接报错，调用没有的方法，只是警告
+没有<span class="class"><span class="keyword">@interface</span>，纸偶@<span class="title">implemenation</span>也可以成功定义一个类</span>
+        @implemenation Dog : <span class="built_in">NSObject</span>
+        {
+            <span class="keyword">int</span> _age;
+            <span class="built_in">NSString</span> *_name;
+        }
+
+        - (<span class="keyword">void</span>)print
+        {
+            <span class="built_in">NSLog</span>(<span class="string">@"The dog's name is %@,ang de it's %d years old!"</span>,_name,_age);
+        }
+        <span class="keyword">@end</span>
+
+@implemenation 中不能声明和<span class="class"><span class="keyword">@interface</span>一样的成员变量</span>
+</code></pre><p>!!! OC中有<code>BOOL</code>基本数据类型，其值是<code>YES</code>和<code>NO</code>，而不是true 和false，它实际上是一种对带符号的自负类型（signed char）的定义（typedef），它使用8为存储空间。<code>YES定义为1，NO定义为0</code>；</p>
+<p><img src="http://www.52nx.net/article/UploadPic/2011-7/2011772043927764.png" alt="image"></p>
+<h3 id="类方法he实例方法">类方法he实例方法</h3><ol>
+<li><p><strong>类方法</strong></p>
+<pre><code>＊ 该方法是直接可以用类名来执行的方法（类本身会在内存中占据存储空间，里面有类／对象方法列表）
+＊ 以加号 ＋ 开头
+＊ 只能用类名调用，对象不能调用
+＊ 类方法不能访问实例变量（成员变量）
+＊ 使用场合：当不需要访问成员变量时，尽量使用类方法
+＊ 类方法和对象方法可以同名
+</code></pre></li>
+<li><p><strong>实例方法</strong></p>
+<pre><code>＊ 该方法是用对象名来执行的方法
+＊ 以减号 — 开头
+＊ 只能用对象名调用，类不能调用，该方法没有对象是不能被执行的
+＊ 对象方法能访问实例变量（成员变量）
+</code></pre></li>
+</ol>
+<h3 id="setter和getter方法">setter和getter方法</h3><ol>
+<li><p><strong>setter和getter方法的使用场合</strong></p>
+<pre><code>@<span class="keyword">public</span>的成员可以随意被赋植，应该使用<span class="keyword">set</span>和<span class="keyword">get</span>方法来管理成员变量的访问
+</code></pre></li>
+<li><p><strong>setter方法</strong></p>
+<pre><code>作用：用来设置成员变量，可以在方法里面过滤一些不合理的值
+命名规范：方法以<span class="keyword">set</span>开头，而且后面跟上成员变量名，成员变量名必须首字母大写，尽量形参名称不要与成员变量名重名（成员变量名最好以下划线 _ 开头）
+返回值：一般为<span class="keyword">void</span>
+</code></pre></li>
+<li><p><strong>getter方法</strong></p>
+<pre><code>作用：返回对象内部的成员变量
+命名规范：方法名和成员变量名同名
+返回值：一般与成员变量的类型相同  
+</code></pre></li>
+</ol>
+<h3 id="self关键字">self关键字</h3><ol>
+<li><p><strong>成员变量和局部变量同名</strong></p>
+<pre><code>当成员变量和局部变量同名时，采取就近原则，访问的是局部变量
+当<span class="keyword">self</span>访问成员变量，区分同名的局部变量
+</code></pre></li>
+<li><p><strong>使用细节</strong></p>
+<pre><code><span class="number">1.</span> 出现的地方：所有的OC方法中（对象方法／类方法），不能出现在函数
+<span class="number">2.</span> 作用：
+    使用“<span class="built_in">self</span><span class="built_in">.</span>属性”访问当前方法中的成员变量
+    使用“<span class="built_in">self</span><span class="subst">-&gt; </span>成员变量”访问当前方法中<span class="keyword">public</span>成员变量
+    使用“［<span class="built_in">self</span> 方法］”调用方法（类方法／实例方法）
+<span class="number">3.</span> 类方法中<span class="built_in">self</span>只能调用类方法，实例方法中<span class="built_in">self</span>只能调用实例方法
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/30/OC/" data-id="ci93n505z0000yyrm789ukxgm" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-实现" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/30/实现/" class="article-date">
+  <time datetime="2015-04-30T02:47:44.000Z" itemprop="datePublished">2015-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/30/实现/">实现</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="声明与实现_c_and_oc">声明与实现        c and oc</h1><h3 id="1-关于NS、@">1.关于NS、@</h3><p>历史遗留的标示符 如：NSString : 本质就是String 只不过在前面加个NS 无具体含义<br>@ ：如果想要输出字符串 必须采用OC的语法 即 ： @”字符串”</p>
+<h3 id="2-OC中BOOL类型有两种：">2.OC中BOOL类型有两种：</h3><pre><code><span class="tag">a</span>. YES : <span class="number">1</span>
+<span class="tag">b</span>. NO  : <span class="number">0</span>
+</code></pre><h3 id="3-OC是面向对象的编程语言。">3.OC是面向对象的编程语言。</h3><pre><code><span class="tag">a</span>. 定义类
+    @<span class="tag">interface</span> 类名 ：<span class="tag">NSObject</span> 
+    {    
+        <span class="comment">//声明类的属性</span>
+        <span class="comment">//成员变量（实例变量）</span>
+    }
+    <span class="comment">//声明函数</span>
+    <span class="tag">-</span> (数据类型）方法名 : (数据类型) 形参名；
+    <span class="variable">@end</span> <span class="comment">//表示类的声明的结束</span>
+b.    实现类
+    <span class="variable">@implementation</span> 类名
+     - （数据类型） 方法名 ：（数据类型） 形参名
+     {
+         <span class="comment">//具体代码</span>
+     }
+     <span class="comment">//OC中提供了一个description函数供类的对象调用，方法里面可以写满足要求的代码</span>
+     - （数据类型）description 
+     {
+         <span class="comment">//具体代码</span>
+     }
+    <span class="variable">@end</span> <span class="comment">//表示类的实现的结束</span>
+
+c. 创建类对象，并调用对象的实例变量以及在类中声明和实现的方法（一般在main方法里面实现）
+    类名 *对象名 = [类名 new];<span class="comment">//[类名 new] 表示类名发布一条new消息，创建一个类对象，然后赋给左边的对象名</span>
+    [对象名 方法名]; <span class="comment">//表示对象发布一条消息，调用类中的方法</span>
+d. 格式化标示符 %@ : 表示输出一个类对象    
+</code></pre><h3 id="4-个人关于面向过程和面向对象的认识">4.个人关于面向过程和面向对象的认识</h3><pre><code>面向过程是在解决某一问题时，采用过程化、结构化的设计方法，即先定义一些要用到的数据结构，这些数据都是为了后面的函数而定义的，然后一个函数或多个函数实现一个功能，最终达到解决问题的目的。而面向对象的设计思想是对于某些具有共同属性、行为的事物，将它们的共同属性、行为抽取出来，抽象化为一个类（OC中类也是一种数据类型），然后在类的实例化时根据不同的需要，实例化为不同的对象，从而实现不同的行为。面向对象的思想中，行为（方法）都是为数据（类）服务的，都是为了描述类而存在的，这是于面向对象不同的一点，而且采用面向对象的设计方法，可以减少许多冗余的代码，使代码更简洁，提高维护性等。
 </code></pre>
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/Blog/" data-id="ci93m5xq30000ujrmhz30ivak" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/实现/" data-id="ci93nb05q00000urm0ypbcvj7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -615,7 +780,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">7</span></li></ul>
     </div>
   </div>
 
@@ -627,7 +792,11 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       <ul>
         
           <li>
-            <a href="/2015/04/30/Blog/">Blog</a>
+            <a href="/2015/04/30/OC/">OC</a>
+          </li>
+        
+          <li>
+            <a href="/2015/04/30/实现/">实现</a>
           </li>
         
           <li>
@@ -640,10 +809,6 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
         
           <li>
             <a href="/2015/04/30/画图/">画图</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/Foundation/">Foundation</a>
           </li>
         
       </ul>
