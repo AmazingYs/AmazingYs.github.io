@@ -61,6 +61,77 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Blog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/30/Blog/" class="article-date">
+  <time datetime="2015-04-30T03:28:25.000Z" itemprop="datePublished">2015-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/30/Blog/">Blog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="setUpBlog">setUpBlog</h1><h3 id="安装brew">安装brew</h3><p>执行命令</p>
+<pre><code><span class="number">1</span>  $ ruby <span class="operator">-e</span> <span class="string">"<span class="variable">$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)</span>"</span>
+</code></pre><h3 id="安装wget">安装wget</h3><p>执行命令</p>
+<pre><code><span class="number">1</span>  $ brew <span class="keyword">install</span> wget
+</code></pre><h3 id="安装nvm(node-js的版本管理工具)">安装nvm(node.js的版本管理工具)</h3><pre><code><span class="number">1</span>  $ wget -qO- http<span class="variable">s:</span>//raw.github.<span class="keyword">com</span>/creationix/nvm/master/install.<span class="keyword">sh</span> | <span class="keyword">sh</span>
+</code></pre><h3 id="添加如下内容到~/-zshrc_配置文件">添加如下内容到~/.zshrc 配置文件</h3><pre><code><span class="number">1</span>  [ -s <span class="string">"/Users/<span class="escape">`u</span>sers<span class="escape">`/</span>.nvm/nvm.sh"</span> ] &amp;&amp; . <span class="string">"/Users/<span class="escape">`u</span>sers<span class="escape">`/</span>.nvm/nvm.sh"</span> # This loads nvm
+</code></pre><h3 id="安装node-js(通过nvm安装)">安装node.js(通过nvm安装)</h3><pre><code><span class="number">1</span>  $ nvm <span class="keyword">install</span> <span class="number">0.10</span>
+</code></pre><h3 id="安装hexo">安装hexo</h3><pre><code><span class="number">1</span>  $ npm <span class="keyword">install</span> -g hexo
+</code></pre><h3 id="创建hexo文件夹，并安装hexo组件">创建hexo文件夹，并安装hexo组件</h3><pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo init hexo
+<span class="number">2</span>  <span class="variable">$ </span>cd hexo
+<span class="number">3</span>  <span class="variable">$ </span>npm install
+</code></pre><h3 id="查看本地">查看本地</h3><p>输⼊入如下命令后,打开浏览器,并输⼊入localhost:4000来查看</p>
+<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo g
+<span class="number">2</span>  <span class="variable">$ </span>hexo s
+</code></pre><h3 id="登录github-com注册github账号">登录github.com注册github账号</h3><h3 id="创建与github同名的repository">创建与github同名的repository</h3><p>eg : github账号名位RicheyLee,则创建RicheyLee.github.io</p>
+<h3 id="部署到github上">部署到github上</h3><p>如下所示编辑_config.yml</p>
+<pre><code><span class="number">1</span>   <span class="string">deploy:</span> 
+<span class="number">2</span>  <span class="string">type:</span> github
+<span class="number">3</span>  <span class="string">repository:</span> git<span class="annotation">@github</span>.<span class="string">com:</span>dorayox/dorayox.github.io.git
+<span class="number">4</span>  <span class="string">branch:</span> master
+</code></pre><p>输入如下命令，完成到github的部署，之后打开浏览器并输入RicheyLee.github.io来查看</p>
+<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo g
+<span class="number">2</span>  <span class="variable">$ </span>hexo d
+</code></pre><h2 id="上传文件到blog">上传文件到blog</h2><p>在hexo目录下，创建新文件</p>
+<p>eg : 创建新文件test</p>
+<pre><code><span class="number">1</span>  $ hexo <span class="keyword">new</span> test
+</code></pre><p>默认创建的新文件后缀问 .md文件，存在hexo/source/_posts/目录下</p>
+<p>使用MOU打开新建的文件并完成编辑</p>
+<pre><code><span class="number">1</span>  $ mou <span class="keyword">source</span><span class="regexp">/_posts/</span>test.md
+</code></pre><p>将新建的文件声称网页</p>
+<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo g
+</code></pre><p>上传到blog</p>
+<pre><code><span class="number">1</span>  <span class="variable">$ </span>hexo d
+</code></pre><p>登录blog查看是否上传成功</p>
+<pre><code><span class="string">http:</span><span class="comment">//RicheyLee.github.io</span>
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/30/Blog/" data-id="ci93m5xq30000ujrmhz30ivak" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-龙女幸甚" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/30/龙女幸甚/" class="article-date">
@@ -88,7 +159,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/龙女幸甚/" data-id="ci93jyfo900013gj2mra5jhk8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/龙女幸甚/" data-id="ci93m5xqp0001ujrmbyroyi7p" class="article-share-link">Share</a>
       
       
     </footer>
@@ -144,7 +215,7 @@ NSValue *worker = [NSValue <span class="string">valueWithBytes:</span>&amp;worke
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/字典/" data-id="ci93jyfoc00033gj2mi4w4rki" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/字典/" data-id="ci93m5xqt0004ujrm6y5fyorx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -290,7 +361,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/画图/" data-id="ci93jyfob00023gj23b2y42af" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/画图/" data-id="ci93m5xqr0002ujrm8t6tz2y3" class="article-share-link">Share</a>
       
       
     </footer>
@@ -448,7 +519,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/Foundation/" data-id="ci93jyfno00003gj2axz2hjlw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/Foundation/" data-id="ci93m5xqx0007ujrmukqw7bku" class="article-share-link">Share</a>
       
       
     </footer>
@@ -519,7 +590,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/复合/" data-id="ci93jyfod00043gj2jwnbu1im" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/复合/" data-id="ci93m5xqv0005ujrmpemhls6y" class="article-share-link">Share</a>
       
       
     </footer>
@@ -544,7 +615,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -554,6 +625,10 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/04/30/Blog/">Blog</a>
+          </li>
         
           <li>
             <a href="/2015/04/30/龙女幸甚/">龙女幸甚</a>
@@ -569,10 +644,6 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
         
           <li>
             <a href="/2015/04/30/Foundation/">Foundation</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/复合/">复合</a>
           </li>
         
       </ul>
