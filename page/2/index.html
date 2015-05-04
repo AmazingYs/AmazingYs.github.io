@@ -150,7 +150,7 @@ OC对象具有多态性
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/14/继承，多态与复合/" data-id="ci947m3bk00028jrm0ea9ewn2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/14/继承，多态与复合/" data-id="ci947oruy00029wrmz446j7e7" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +221,7 @@ OC对象具有多态性
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/10/block/" data-id="ci947m3bz000c8jrmumvw0m6s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/10/block/" data-id="ci947orvd000c9wrmo8uaejrw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -269,7 +269,75 @@ OC对象具有多态性
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/30/拷贝/" data-id="ci947m3bn00048jrmdhql72tp" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/30/拷贝/" data-id="ci947orv100049wrm2o0mtr7v" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-KVC" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/02/KVC/" class="article-date">
+  <time datetime="2015-03-02T13:31:21.000Z" itemprop="datePublished">2015-03-02</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/02/KVC/">KVC</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="KVC（Key_Valuble_Coding）">KVC（Key Valuble Coding）</h2><ol>
+<li>基本概念<ul>
+<li>是一种间接更改对象状态（或者说是属性值）的方式：key-value coding 简称KVC.</li>
+<li>主要本质特点是采用字符串来标识对象的属性变量，并可以利用这个标识来更改对象的状态（或者说是属性值）</li>
+</ul>
+</li>
+<li><p>基本用法</p>
+<ul>
+<li><ul>
+<li>(id)valueForKey:(NSString *)key //以key作为标识符，获取其对应的属性值</li>
+</ul>
+</li>
+<li><ul>
+<li>(void)setValue:(id)value forKey:(NSString *)key //以key作为标识符设置其对应的属性值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>调用机制</p>
+<ul>
+<li>valueForKey:会首先查找以参数名命名（格式为-key或者isKey)的getter方法，如果找到的话则调用这个方法；如果没有找到这样的getter方法，它将会在对象内部寻找名称格式为_key或者key的实例变量，然后返回。</li>
+<li>setValue:forKey:的机制跟valueForKey相似。它首先查找参数名命名的setter方法，如果找到的话则完成设置；如果没有找到setter方法， 则直接在类中找到名称格式为_key或者key的实例变量， 然后将value赋值给它。</li>
+</ul>
+</li>
+<li><p>键路径</p>
+<p>键路径的概念和表示：可以在对象和不同的变量名称之间用圆点分开来表示。</p>
+<ul>
+<li>-(id)valueForKeyPath:(NSString *)keyPath //以keyPath作为标识符，获取其对应的属性值</li>
+<li>-(void)setValue:(id)value forKeyPath:(NSString *)keyPath //以keyPath为标识符，设置其对应的属性的值。</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/02/KVC/" data-id="ci947orum00009wrmomacn5qr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -298,7 +366,7 @@ OC对象具有多态性
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 

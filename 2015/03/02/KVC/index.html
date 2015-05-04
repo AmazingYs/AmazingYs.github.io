@@ -3,44 +3,56 @@
 <head>
   <meta charset="utf-8">
   
-  <title>拷贝 | Hexo</title>
+  <title>KVC | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="拷贝
-浅拷贝（shallow copy）
- 不会复制所引用的对象，新复制的对象只会指向现有的引用对象上。（引用计数加 1 ，地址不变）
+  <meta name="description" content="KVC（Key Valuble Coding）
+基本概念
+是一种间接更改对象状态（或者说是属性值）的方式：key-value coding 简称KVC.
+主要本质特点是采用字符串来标识对象的属性变量，并可以利用这个标识来更改对象的状态（或者说是属性值）
 
-深拷贝（deep copy）
- 真正意义的复制概念。得到的结果是多个，而非只是对象的引用。（引用计数 不变 ，地址发生变化）
 
-关键字
- copy：对不可变的集合copy为浅拷贝，对可变的集合copy为深拷贝
- mutableCopy：对可变的或不可变的集合mu">
+基本用法
+
+
+(id)valueForKey:(NSString *)key //以key作为标识符，获取其对应的属性值
+
+
+
+(void)s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="拷贝">
-<meta property="og:url" content="http://yoursite.com/2015/03/30/拷贝/index.html">
+<meta property="og:title" content="KVC">
+<meta property="og:url" content="http://yoursite.com/2015/03/02/KVC/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="拷贝
-浅拷贝（shallow copy）
- 不会复制所引用的对象，新复制的对象只会指向现有的引用对象上。（引用计数加 1 ，地址不变）
+<meta property="og:description" content="KVC（Key Valuble Coding）
+基本概念
+是一种间接更改对象状态（或者说是属性值）的方式：key-value coding 简称KVC.
+主要本质特点是采用字符串来标识对象的属性变量，并可以利用这个标识来更改对象的状态（或者说是属性值）
 
-深拷贝（deep copy）
- 真正意义的复制概念。得到的结果是多个，而非只是对象的引用。（引用计数 不变 ，地址发生变化）
 
-关键字
- copy：对不可变的集合copy为浅拷贝，对可变的集合copy为深拷贝
- mutableCopy：对可变的或不可变的集合mu">
+基本用法
+
+
+(id)valueForKey:(NSString *)key //以key作为标识符，获取其对应的属性值
+
+
+
+(void)s">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="拷贝">
-<meta name="twitter:description" content="拷贝
-浅拷贝（shallow copy）
- 不会复制所引用的对象，新复制的对象只会指向现有的引用对象上。（引用计数加 1 ，地址不变）
+<meta name="twitter:title" content="KVC">
+<meta name="twitter:description" content="KVC（Key Valuble Coding）
+基本概念
+是一种间接更改对象状态（或者说是属性值）的方式：key-value coding 简称KVC.
+主要本质特点是采用字符串来标识对象的属性变量，并可以利用这个标识来更改对象的状态（或者说是属性值）
 
-深拷贝（deep copy）
- 真正意义的复制概念。得到的结果是多个，而非只是对象的引用。（引用计数 不变 ，地址发生变化）
 
-关键字
- copy：对不可变的集合copy为浅拷贝，对可变的集合copy为深拷贝
- mutableCopy：对可变的或不可变的集合mu">
+基本用法
+
+
+(id)valueForKey:(NSString *)key //以key作为标识符，获取其对应的属性值
+
+
+
+(void)s">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -86,10 +98,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-拷贝" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-KVC" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2015/03/30/拷贝/" class="article-date">
-  <time datetime="2015-03-30T13:23:29.000Z" itemprop="datePublished">2015-03-30</time>
+    <a href="/2015/03/02/KVC/" class="article-date">
+  <time datetime="2015-03-02T13:31:21.000Z" itemprop="datePublished">2015-03-02</time>
 </a>
     
   </div>
@@ -100,7 +112,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      拷贝
+      KVC
     </h1>
   
 
@@ -108,23 +120,43 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="拷贝">拷贝</h2><ol>
-<li><p>浅拷贝（shallow copy）</p>
-<p> 不会复制所引用的对象，新复制的对象只会指向现有的引用对象上。（引用计数加 1 ，地址不变）</p>
+        <h2 id="KVC（Key_Valuble_Coding）">KVC（Key Valuble Coding）</h2><ol>
+<li>基本概念<ul>
+<li>是一种间接更改对象状态（或者说是属性值）的方式：key-value coding 简称KVC.</li>
+<li>主要本质特点是采用字符串来标识对象的属性变量，并可以利用这个标识来更改对象的状态（或者说是属性值）</li>
+</ul>
 </li>
-<li><p>深拷贝（deep copy）</p>
-<p> 真正意义的复制概念。得到的结果是多个，而非只是对象的引用。（引用计数 不变 ，地址发生变化）</p>
+<li><p>基本用法</p>
+<ul>
+<li><ul>
+<li>(id)valueForKey:(NSString *)key //以key作为标识符，获取其对应的属性值</li>
+</ul>
 </li>
-<li><p>关键字</p>
-<p> <code>copy</code>：对不可变的集合copy为浅拷贝，对可变的集合copy为深拷贝</p>
-<p> <code>mutableCopy</code>：对可变的或不可变的集合mutableCopy都是深拷贝，但是对于集合内部对象的拷贝时浅拷贝。</p>
+<li><ul>
+<li>(void)setValue:(id)value forKey:(NSString *)key //以key作为标识符设置其对应的属性值。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>调用机制</p>
+<ul>
+<li>valueForKey:会首先查找以参数名命名（格式为-key或者isKey)的getter方法，如果找到的话则调用这个方法；如果没有找到这样的getter方法，它将会在对象内部寻找名称格式为_key或者key的实例变量，然后返回。</li>
+<li>setValue:forKey:的机制跟valueForKey相似。它首先查找参数名命名的setter方法，如果找到的话则完成设置；如果没有找到setter方法， 则直接在类中找到名称格式为_key或者key的实例变量， 然后将value赋值给它。</li>
+</ul>
+</li>
+<li><p>键路径</p>
+<p>键路径的概念和表示：可以在对象和不同的变量名称之间用圆点分开来表示。</p>
+<ul>
+<li>-(id)valueForKeyPath:(NSString *)keyPath //以keyPath作为标识符，获取其对应的属性值</li>
+<li>-(void)setValue:(id)value forKeyPath:(NSString *)keyPath //以keyPath为标识符，设置其对应的属性的值。</li>
+</ul>
 </li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/30/拷贝/" data-id="ci947orv100049wrm2o0mtr7v" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/02/KVC/" data-id="ci947orum00009wrmomacn5qr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -133,20 +165,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/04/10/block/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/03/30/拷贝/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          block
+          拷贝
         
       </div>
     </a>
   
-  
-    <a href="/2015/03/02/KVC/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">KVC</div>
-    </a>
   
 </nav>
 
