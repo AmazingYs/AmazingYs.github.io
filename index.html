@@ -61,6 +61,328 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-字符串" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/04/字符串/" class="article-date">
+  <time datetime="2015-05-04T07:40:54.000Z" itemprop="datePublished">2015-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/04/字符串/">字符数组</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Foundition框架1">Foundition框架1</h2><pre><code><span class="number">1.</span> OC集合只能存储OC对象，不能存储c语言中的基本数据类型，如<span class="keyword">int</span>，<span class="keyword">float</span>，<span class="keyword">enum</span>，<span class="keyword">struct</span>，且不能在集合中存储<span class="literal">nil</span>。
+</code></pre><h4 id="字符串">字符串</h4><ol>
+<li>不可变字符串 ： NSString *string1;</li>
+<li><p>可变字符串 ：  <code>NSMutableString</code> *string2;</p>
+<p> 对可变字符串的操作：</p>
+<p> 2.1 增加元素 </p>
+<p> <code>string2 appendFormat:@&quot;hello&quot;];</code></p>
+<p> 2.2 删除元素</p>
+<p> <code>[string2 replaceCharacterInRange:NAMakeRange(2,3)];</code></p>
+<p> 2.3 修改元素（替换）  </p>
+<p> <code>[string2 replaceCharacterInRange:NAMakeRange(2,3)withString:@&quot;word&quot;];</code></p>
+</li>
+<li><p>字符串的操作</p>
+<p> 3.1 比较</p>
+<p> //判断两个字符串是否相等，返回的是BOOL值</p>
+<p> <code>[str1 isEqualTo:str2];</code></p>
+<p> <code>NSCompareResult res  = [str1 copmare:str2];</code></p>
+<p> 不区分大小写的比较：<code>caseInsensitiveCompare</code></p>
+<p> 有选择参数的比较： <code>［str compare：str2 option：NSStringCompareOption］</code></p>
+<p> NSStringCompareOption选项可以传入的参数</p>
+<pre><code><span class="keyword">enum</span> {
+           <span class="built_in">NSCaseInsensitiveSearch</span> = <span class="number">1</span>,   不区分大小写
+           <span class="built_in">NSLiteralSearch</span> = <span class="number">2</span>,           对于相等的字符串逐个比较
+           <span class="built_in">NSBackwardsSearch</span> = <span class="number">4</span>,         从后向前比较
+          <span class="built_in">NSAnchoredSearch</span> = <span class="number">8</span>,          限制比较从开始还是结尾
+           <span class="built_in">NSNumericSearch</span> = <span class="number">64</span>,          对于数字按数字比较
+          <span class="built_in">NSDiacriticInsensitiveSearch</span> = <span class="number">128</span>,     不区分音节
+           <span class="built_in">NSWidthInsensitiveSearch</span> = <span class="number">256</span>,         忽略full－width half－width （如 Unicode code point U+FF41 和 Unicode code point U+<span class="number">0061</span> 的字母 “a”is equal）
+           <span class="built_in">NSForcedOrderingSearch</span> = <span class="number">512</span>,           对于不区分大小写比较相等的字符串，强制返回<span class="built_in">NSOderedAscending</span> or <span class="built_in">NSOrderedDeascending</span> （如“aa” is grater than “AA”）
+           <span class="built_in">NSRegularExpressionSearch</span> = <span class="number">1024</span>        treated as an ICU－compatible regular expression
+    };
+</code></pre><p> NSCompareResult 有三种值：</p>
+<pre><code><span class="built_in">NSOrderedSame</span>  两字符串相等
+<span class="built_in">NSOrderedAscending</span>  str1 &lt; str2
+<span class="built_in">NSOrderedDeascending</span>  str1 &gt; str2;
+</code></pre><p> 3.2 求长度</p>
+<p> <code>NSUInteger strlen = [str1 length];</code></p>
+<p> 3.3 大小写转换</p>
+<p> <code>str2 = [str1 uupercaseString];</code></p>
+<p> <code>str2 = [str1 lowercaseString];</code></p>
+<p> 3.4 获取文件前缀、后缀</p>
+<p> <code>str2 ＝[str1 hasPrefix:@&quot;word&quot;];</code></p>
+<p> <code>str2 = [str1 hasSuffix:@&quot;txt&quot;];</code></p>
+<p> 3.5 获取子串</p>
+<p> //获取str2在str1中的位置，即range.location and range.length</p>
+<p> <code>range = [str1 rangOfString:str3];</code></p>
+<p> <code>range = [str1 rangOfString:@&quot;hello&quot;];</code></p>
+<p> //获取str1 第6个位置之后的字符串赋值给str2</p>
+<p> <code>str2 = [str1 substringFromIndex:6];</code></p>
+<p> //获取str1 从开始到第6个位置之间的字符串赋值给str2</p>
+<p> <code>str2 = [str1 substringTOIndex:6];</code></p>
+<p> //获取str1 从第6个位置开始长度为5的字符串赋值给str2</p>
+<p> <code>str2 = [str1 substringWithRange:NSMakeRange（6，7）];</code></p>
+<p> 3.6 文件路径的转换</p>
+<p> //间文件路径字符串str1 ＝ @“~/test.html”的路径转换为绝对路径赋值给str2</p>
+<p> <code>str2 = [str1 stringByExpandingTildeInPath];</code></p>
+<p> //间文件路径字符串str1 ＝ @“/users/qingyun/test.html”的路径转换为相对路径赋值给str2</p>
+<p> <code>str2 = [str1 stringByAbbreviatingWithTildeInPath];</code></p>
+<p> 3.7 文件路径的扩展名</p>
+<p> <code>str2 = [str1 pathExtension];</code>   此时 str2 ＝ @“html”；</p>
+<p> 3.7 删除文件路径的后缀</p>
+<p> <code>str2 = [str1 stringByDeletePathExtension];</code>   此时 str2 ＝ @“~/test”；</p>
+<p> 3.9 追加字符串</p>
+<p> str1 ＝ @”hello word”;</p>
+<p> <code>str2 = [str1 stringByAppendingFormat:@&quot;wellcom&quot;];</code>   此时 str2 ＝ @“hello word wellcom”;</p>
+</li>
+</ol>
+<h4 id="数组">数组</h4><ol>
+<li>不可变数组 ： NSArray  *array1;</li>
+<li><p>可变数组 ： <code>NSMutableArray</code>  *array2;</p>
+<p> 数组初始化：</p>
+<p> <code>NSArray *array1 = [NSArray arrayWithObjects:@&quot;hello&quot;,@&quot;word&quot;,@&quot;two&quot;,nil];</code></p>
+<p> <code>NSArray *array1 = @[@12,@34,@&quot;hello&quot;,@&quot;error&quot;];</code></p>
+<p> //创建空数组</p>
+<p> <code>NSMutableArray  *array2 = [NSMutableArray array];</code></p>
+<p> //用已有的数组创建新数组</p>
+<p> <code>NSMutableArray  *array2 = [NSMutableArray arrayWithArray:array];</code></p>
+<p> //创建一个数组，并预分配内存</p>
+<p> <code>NSMutableArray  *array2 = [NSMutableArray arrayWithCapacity:40];</code></p>
+<p> 对可变数组的操作：</p>
+<p> 2.1 增加元素 </p>
+<p> <code>[array2 addObjects:@&quot;hello&quot;];</code></p>
+<p> 2.2 删除元素</p>
+<p> //删除下标为2的对象</p>
+<p> <code>[array2 removeObjectsAtIndex:2];</code></p>
+<p> //删除一定范围内的所有@“hello”</p>
+<p> <code>[array2 removeObject:@&quot;hello&quot; inRange:NSMakeRange(2, 3)];</code></p>
+<p> <code>[array3 removeObjectIdenticalTo:@&quot;is&quot; inRange:NSMakeRange(1, 5)];</code></p>
+<p> //删除该数组内的所有@“hello”</p>
+<p> <code>[array2 removeObjectIdenticalTo:@&quot;hello&quot;];</code></p>
+<p> 2.3 修改元素（替换）</p>
+<p> <code>[array2 removeObjectsAtIndex:2 withObject:@&quot;dog&quot;];</code></p>
+<p> <code>[array2 removeObjectsAtIndex:2 withObject:str];</code></p>
+<p> <code>[array2 removeObjectsInRange:NSMakeRang(0,2) withObjectFromArray:array];</code></p>
+<p> 2.4 插入元素</p>
+<p> <code>[array2 insertObjects:str1 AtIndex:2];</code></p>
+<p> 2.5 访问数组某个对象</p>
+<p> <code>array2［下标］</code></p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/04/字符串/" data-id="ci9betjmm0008uormrlx7wrs3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-字典" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/04/字典/" class="article-date">
+  <time datetime="2015-05-04T05:40:54.000Z" itemprop="datePublished">2015-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/04/字典/">字典</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Foundition框架">Foundition框架</h2><h4 id="字典">字典</h4><ol>
+<li>不可变数组 ： NSDictionary  *dictionary1;</li>
+<li><p>可变数组 ： <code>NSMutableDictionary</code>  *dictionary2;</p>
+<p> 字典初始化：</p>
+<p> <code>Dictionary *dictionary1 = [NSDictionary dictionaryWithObjectsAndKeys:str1,@&quot;hello&quot;,str2,@&quot;word&quot;,str3,@&quot;two&quot;,nil];</code></p>
+<p> <code>Dictionary *dictionary1 = @{@&quot;num1&quot;:@12,@&quot;num2&quot;:@34,@&quot;str1&quot;:@&quot;hello&quot;,@&quot;str2&quot;:@&quot;error&quot;};</code></p>
+<p> //创建空字典</p>
+<p> <code>NSMutableDictionary  *dictionary2 = [NSMutableDictionary dictionary];</code></p>
+<p> //用已有的字典创建新字典</p>
+<p> <code>NSMutableDictionary  *dictionary2 = [NSMutableDictionary dictionaryWithDictionary:array];</code></p>
+<p> //创建一个字典，并预分配内存</p>
+<p> <code>NSMutableDictionary  *dictionary2 = [NSMutableDictionary dictionaryWithCapacity:40];</code></p>
+<p> 对可变字典的操作：</p>
+<p> 2.1 增加元素 </p>
+<p> <code>[dictionary2 addObjects:(id)forKey:@&quot;key&quot;];</code></p>
+<p> 2.2 删除元素</p>
+<p> <code>[dictionary2 removeObjectForKey:@&quot;key&quot;];</code></p>
+<p> 2.3 修改元素（替换）</p>
+<p> <code>[dictionary2 setObject:（id）forKey:@&quot;key&quot;];</code></p>
+<p> 2.4 访问字典</p>
+<p> <code>dictionary2［@“key”］;</code></p>
+<p> <code>[dictionary2 objectForKey:@&quot;key&quot;]</code></p>
+</li>
+</ol>
+<h4 id="装箱－开箱">装箱－开箱</h4><ol>
+<li><p>对基本数据类型的装箱－NSNumber</p>
+<p> //装箱方法1</p>
+<p> <code>NSNumber *number = [NSNumber numberWithChar:&#39;X&#39;];</code></p>
+<p> <code>NSNumber *number = [NSNumber numberWithINT:23];</code></p>
+<p> <code>NSNumber *number = [NSNumber numberWithBOOL:YES];</code></p>
+<p> <code>NSNumber *number = [NSNumber numberWithDouble:34.5];</code></p>
+<p> //装箱方法2</p>
+<p> @23，@34.5</p>
+<p> //开箱</p>
+<p> <code>[number charValue];</code></p>
+<p> <code>[number intValue];</code></p>
+<p> <code>[number BOOLValue];</code></p>
+<p> <code>[number DoubleValue];</code>    </p>
+</li>
+<li><p>对所有非对象类型的装箱（包括基本数据类型）－ NSValue</p>
+<p> //对NSRect，NSPoint，NSRange装箱,也可以对基本数据类型进行装箱</p>
+<p> NSRect rect = NSMakeRect(10,20,30,40);</p>
+<p> <code>NSValue *value = [NSvalue valueWithBytes:&amp;rect objCType:@encode(NSRect)];</code></p>
+<p> int a ＝ 5；</p>
+<p> <code>NSValue *value = [NSvalue valueWithBytes:&amp;a objCType:@encode(int)];</code></p>
+<p> //开箱</p>
+<p> NSRect rect2 ＝ ｛0｝；</p>
+<p> <code>［value getValue:&amp;rect］;</code></p>
+<p> int b = 0;</p>
+<p> <code>[value getValue:&amp;b];</code></p>
+<p> //仅对NSRect，NSPoint，NSRange装箱</p>
+<p> <code>NSValue *value = [NSValue valueWithRect];</code></p>
+<p> <code>NSValue *value = [NSValue valueWithRange];</code></p>
+<p> <code>NSValue *value = [NSValue valueWithPoint];</code></p>
+<p> //开箱</p>
+<p> NSRect rect2 ＝ ｛0｝；</p>
+<p> <code>[value rectValue];</code></p>
+<p> NSRange range = {0};</p>
+<p> <code>[value rangeValue];</code></p>
+<p> NSPoint point = {0};</p>
+<p> <code>[value pointValue];</code></p>
+</li>
+</ol>
+<h4 id="枚举">枚举</h4><pre><code><span class="comment">//normal enumerator</span>
+
+<span class="built_in">NSEnumerator</span> *enumer = [array objectEnumerator];
+
+<span class="keyword">id</span> obj;
+<span class="keyword">while</span> (obj = [enumer nextObject]) {
+    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,obj);
+}
+
+<span class="built_in">NSEnumerator</span> *enumer2 = [array reverseObjectEnumerator];
+<span class="keyword">while</span> (obj = [enumer2 nextObject]) {
+    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,obj);
+}
+
+<span class="comment">//fast enumerator</span>
+
+<span class="keyword">for</span> (<span class="keyword">id</span> obj2 <span class="keyword">in</span> array) {
+    <span class="built_in">NSLog</span>(<span class="string">@"%@"</span>,obj2);
+}
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/04/字典/" data-id="ci9betjmn0009uorm6smj1t0x" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-类别" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/05/04/类别/" class="article-date">
+  <time datetime="2015-05-04T05:36:53.000Z" itemprop="datePublished">2015-05-04</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/05/04/类别/">类别</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="类别">类别</h2><ol>
+<li><p>类别的简述</p>
+<ul>
+<li>为现有的类（自定义的类、第三方的类或者是系统定义的类）添加一些新的行为；</li>
+<li>类别可以解决继承不能为累簇添加新方法的问题。</li>
+</ul>
+</li>
+<li><p>类别的声明和实现</p>
+<p> 格式： <code>类名 ＋ 类别名</code></p>
+<p> 如：为NSString 创建一个类别 <code>NSString＋NumberConvenience</code>；</p>
+<p> 只要保证类别名称唯一，可以向一个类中添加任意数量的类别。</p>
+<p> 声明：</p>
+<p> @interface NSString （NumberConvenience）</p>
+<p> － （NSNumber *）lengthAsNumber;</p>
+<p> @end</p>
+<p> 实现：</p>
+<p> @implementation NSString （NumberConvenience）</p>
+<p> － （NSNumber *）lengthAsNumber<br> {</p>
+<p> }</p>
+<p> @end</p>
+</li>
+<li><p>类别的优缺点</p>
+<p> 缺点：</p>
+<pre><code><span class="bullet">* </span>只能添加方法，只可以访问原始类的实例变量，无法向类别中添加新的实例变量
+<span class="bullet">* </span>名称冲突。类别具有最高优先级，即当类别中定义与对应类中已有的方法同名的方法，对象调用该方法时，会优先调用类别中定义的方法。
+<span class="bullet">* </span>多个Category中如果实现了相同的方法，只有最后一个参与编译的才会有效   
+</code></pre><p> 优点：</p>
+<pre><code><span class="bullet">* </span>将类的实现代码分散到多个不同文件或框架中。
+<span class="bullet">* </span>可以创建对类中私有方法的前向引用，
+<span class="bullet">* </span>向对象添加非正式协议。
+</code></pre></li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/05/04/类别/" data-id="ci9betjmf0003uormmwmjljih" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-协议" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/30/协议/" class="article-date">
@@ -139,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/协议/" data-id="ci9bejm1q000ar1rmq8a2gwmf" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/协议/" data-id="ci9betjmr000cuormb9hxootu" class="article-share-link">Share</a>
       
       
     </footer>
@@ -232,7 +554,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/内存管理/" data-id="ci9bejm1r000br1rmor143xpj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/内存管理/" data-id="ci9betjms000duorm97atymo4" class="article-share-link">Share</a>
       
       
     </footer>
@@ -402,7 +724,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/OC/" data-id="ci9bejm1t000dr1rmrplbukr9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/OC/" data-id="ci9betjmv000fuormcy0g9p4n" class="article-share-link">Share</a>
       
       
     </footer>
@@ -468,7 +790,7 @@ d. 格式化标示符 %@ : 表示输出一个类对象
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/实现/" data-id="ci9bejm1j0005r1rmwef5huqj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/实现/" data-id="ci9betjmj0006uorm261xumxg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -505,63 +827,7 @@ d. 格式化标示符 %@ : 表示输出一个类对象
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/龙女幸甚/" data-id="ci9bejm1d0001r1rmnvf4j7iy" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-字典" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/30/字典/" class="article-date">
-  <time datetime="2015-04-30T02:26:09.000Z" itemprop="datePublished">2015-04-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/30/字典/">字典</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="1-NSDictionary(不可变字典)">1.NSDictionary(不可变字典)</h1><h2 id="1-创建字典：">1.创建字典：</h2><h3 id="①-字面量语法_创建字典_前面为键_：_后面为值_注意这种和NSArray一样_，创建的对象都是不可变的">①.字面量语法 创建字典 前面为键 ： 后面为值  注意这种和NSArray一样 ，创建的对象都是不可变的</h3><h3 id="NSDictionary_*tires_=_@{@”left-front”:_@”左前”,@”righr-front”:_@”右前”,@”left-back”:@”左后”,@”right-back”:@”右后”};">NSDictionary *tires = @{@”left-front”: @”左前”,@”righr-front”: @”右前”,@”left-back”:@”左后”,@”right-back”:@”右后”};</h3><h3 id="②-使用_NSDictionary的工厂方法dictionaryWithObjectAndKeys_来创建字典">②.使用 NSDictionary的工厂方法dictionaryWithObjectAndKeys  来创建字典</h3><h3 id="NSDictionary_*tire1_=_[NSDictionary_dictionaryWithObjectsAndKeys:t1,@”left-front”,t2,@”right-front”,t3,@”left-back”,t4,@”right-back”,_nil];">NSDictionary *tire1 = [NSDictionary dictionaryWithObjectsAndKeys:t1,@”left-front”,t2,@”right-front”,t3,@”left-back”,t4,@”right-back”, nil];</h3><h2 id="2-访问字典中得某个键值">2.访问字典中得某个键值</h2><h3 id="①_Tire_*tire_=_[tires_objectForKey:@”left-back”];">① Tire *tire = [tires objectForKey:@”left-back”];</h3><h3 id="②_Tire_*tire2_=_tires[@”left-back”];">② Tire *tire2 = tires[@”left-back”];</h3><h2 id="3-访问字典中得key_和_value">3.访问字典中得key 和 value</h2><h3 id="allKeys_方法：_获取字典的key">allKeys 方法： 获取字典的key</h3><h3 id="allValues_方法：获取字典的value">allValues 方法：获取字典的value</h3><h1 id="2-NSMutableDictionary(可变字典)的一些常用方法">2.NSMutableDictionary(可变字典)的一些常用方法</h1><h2 id="1-使用工厂方法_dictionaryWithCapacity_来创建字典">1.使用工厂方法 dictionaryWithCapacity 来创建字典</h2><h3 id="NSDictionary_*tire1_=_[NSDictionary_dictionaryWithObjectsAndKeys:t1,@”left-front”,t2,@”right-front”,t3,@”left-back”,t4,@”right-back”,_nil];-1">NSDictionary *tire1 = [NSDictionary dictionaryWithObjectsAndKeys:t1,@”left-front”,t2,@”right-front”,t3,@”left-back”,t4,@”right-back”, nil];</h3><h3 id="也可以直接通过这种方法添加_:_字典对象[key]_=_value">也可以直接通过这种方法添加 : 字典对象[key] = value</h3><h2 id="2-向字典中添加元素">2.向字典中添加元素</h2><h3 id="setObject_:_值对象_forKey:_key对象">setObject : 值对象 forKey: key对象</h3><h3 id="如：[mutableDictionary_setObject:_t1_forKey:@”left-front”];">如：[mutableDictionary setObject: t1 forKey:@”left-front”];</h3><h2 id="3-从字典中删除元素">3.从字典中删除元素</h2><h3 id="removeObjectForKey_:_删除制定key下得元素">removeObjectForKey : 删除制定key下得元素</h3><h3 id="removeAllObjects_:_删除字典中所有的元素">removeAllObjects : 删除字典中所有的元素</h3><h2 id="4-setDictionary_:_anotherDictionary_将接受字典的内容情况，并将给定字典的内容添加进来">4.setDictionary : anotherDictionary  将接受字典的内容情况，并将给定字典的内容添加进来</h2><h1 id="3-注意：NSString、NSArray、NSDictionary是类簇，不要创建它们的子类。">3.注意：NSString、NSArray、NSDictionary是类簇，不要创建它们的子类。</h1><h1 id="4-NSNumber_和_NSValue">4.NSNumber 和 NSValue</h1><h3 id="一些基本数据类型_如int、float、double、bool、char等，这些数据类型的数据不能存放在OC的NSArray、NSDictionary等集合中，所以用NSNumber、NSValue将这些数据_封装为对象，存放只在集合中。">一些基本数据类型 如int、float、double、bool、char等，这些数据类型的数据不能存放在OC的NSArray、NSDictionary等集合中，所以用NSNumber、NSValue将这些数据 封装为对象，存放只在集合中。</h3><h2 id="装箱过程（boxing）：">装箱过程（boxing）：</h2><h3 id="NSNumber_:_一般只封装int、float、double、bool、char等数据类型，这个类提供了一个方法：valueWithInt、valueWithFloat等,将数据类型封装为NSNumber类型的对象">NSNumber : 一般只封装int、float、double、bool、char等数据类型，这个类提供了一个方法：valueWithInt、valueWithFloat等,将数据类型封装为NSNumber类型的对象</h3><h3 id="如：NSNumber_*intValue_=_[NSNumber_valueWithInt:10];">如：NSNumber *intValue = [NSNumber valueWithInt:10];</h3><h3 id="当然还可以用新方法_如：NSNumber_*myInt_=_@10;这种方法是在@后面加一个基本数据类型">当然还可以用新方法 如：NSNumber *myInt = @10;这种方法是在@后面加一个基本数据类型</h3><h3 id="NSValue_:_对于结构体、枚举类型等数据类型，一般都用NSValue来封装对象">NSValue : 对于结构体、枚举类型等数据类型，一般都用NSValue来封装对象</h3><h3 id="对于自定义的结构体，用它提供的：_valueWithBytes_:指针_ObjCType:_类型_如：">对于自定义的结构体，用它提供的： valueWithBytes :指针 ObjCType: 类型        如：</h3><h3 id="typedef_struct{">typedef struct{</h3><pre><code>    <span class="typename">int</span> ID;<span class="comment">//工号</span>
-    <span class="typename">double</span> salary;<span class="comment">//工资</span>
-    }Worker;<span class="comment">//自定义一个Worker结构体</span>
-    Worker worker = { <span class="number">001</span>,<span class="number">10000</span>};
-NSValue *worker = [NSValue <span class="string">valueWithBytes:</span>&amp;worker <span class="string">ObjCType :</span><span class="annotation">@encode</span>(Worker) ];
-用上述方法创建一个NSValue类型的对象 worker,这个对象就可以存到集合中了
-</code></pre><h2 id="开箱过程（unboxing）：">开箱过程（unboxing）：</h2><h3 id="对于基本数据类型_可以用如：intValue、floatValue等方法将上述封装的对象“拆”出来为基本的数据。如_int_myInt_=_[intValue_intValue];">对于基本数据类型 可以用如：intValue、floatValue等方法将上述封装的对象“拆”出来为基本的数据。如 int myInt = [intValue intValue];</h3><h3 id="对于结构体、枚举等数据类型。可以用_getValue">对于结构体、枚举等数据类型。可以用 getValue</h3><h3 id="例子：">例子：</h3><h3 id="Worker_result_;//定义一个结构体实例">Worker result ;//定义一个结构体实例</h3><h3 id="[worker_getValue:&amp;result];//getValue方法是将worker的内容添加到给定的result已经申请的栈空间的地址中，这样这个结构体就有了内容。这就是开箱">[worker getValue:&amp;result];//getValue方法是将worker的内容添加到给定的result已经申请的栈空间的地址中，这样这个结构体就有了内容。这就是开箱</h3><h3 id="注意：OC语言中，前面加get的方法名一般都有特殊含义，所有对于自定义的方法，向表示获取的含义时，不能再前面添加get,如：在定义类的set、get方法时，一般get方法都没有加get。">注意：OC语言中，前面加get的方法名一般都有特殊含义，所有对于自定义的方法，向表示获取的含义时，不能再前面添加get,如：在定义类的set、get方法时，一般get方法都没有加get。</h3><h2 id="5-NSNull">5.NSNull</h2><h3 id="在某些特殊的场合，为了表达_“空”、什么都没有的概念。不能用“_”来表示。这时可以用NSNull_的null方法来创建一个表示_空、什么都没有的对象。">在某些特殊的场合，为了表达 “空”、什么都没有的概念。不能用“ ”来表示。这时可以用NSNull 的null方法来创建一个表示 空、什么都没有的对象。</h3><h3 id="例子：-1">例子：</h3><h3 id="NSDictionary_*dic1_=_@{@”name”:@”zhangsan”,@”job”:@”IOS工程师”};">NSDictionary *dic1 = @{@”name”:@”zhangsan”,@”job”:@”IOS工程师”};</h3><h3 id="NSDictionary_*dic2_=_@{@”name”:@”lisi”,@”job”:[NSNull_null]};//job_所表示的值为空">NSDictionary *dic2 = @{@”name”:@”lisi”,@”job”:[NSNull null]};//job 所表示的值为空</h3><h3 id="NSArray_*array1_=_@[dic1,dic2];">NSArray *array1 = @[dic1,dic2];</h3><h3 id="for_(NSDictionary_*temp_in_array1)_{">for (NSDictionary *temp in array1) {</h3><h3 id="if_([temp_valueForKey:@”job”]_!=_[NSNull_null])_{">if ([temp valueForKey:@”job”] != [NSNull null]) {</h3><h3 id="NSLog(@”%@_have_job_:%@”,temp[@”name”],temp[@”job”]);">NSLog(@”%@ have job :%@”,temp[@”name”],temp[@”job”]);</h3><h3 id="}else{">}else{</h3><h3 id="NSLog(@”%@_not_have_job”,temp[@”name”]);">NSLog(@”%@ not have job”,temp[@”name”]);</h3><h3 id="}">}</h3><h3 id="}-1">}</h3><h1 id="6-查找用户的MP3文件">6.查找用户的MP3文件</h1><h2 id="1-创建一个文件管理者对象">1.创建一个文件管理者对象</h2><pre><code><span class="built_in">NSFileManager</span> *fileManage = [<span class="built_in">NSFileManager</span> defaultManager];
-</code></pre><h2 id="//2-找到用户的目录_@”~/Desktop”_~表示的是当前用户_/Desktop_是当前用户的桌面">//2.找到用户的目录 @”~/Desktop” ~表示的是当前用户 /Desktop 是当前用户的桌面</h2><pre><code>NSString <span class="keyword">*</span>homePath = [<span class="comment">@"~/Desktop" stringByExpandingTildeInPath];</span>
-</code></pre><h2 id="//3-创建一个枚举对象，用来遍历文件">//3.创建一个枚举对象，用来遍历文件</h2><pre><code><span class="attribute">NSDirectoryEnumerator *dirEnum </span>=<span class="string"> [fileManage enumeratorAtPath:homePath ];</span>
-</code></pre><h2 id="//4-创建一个数组_用来存放查找到下面查找的文件名">//4.创建一个数组 用来存放查找到下面查找的文件名</h2><pre><code><span class="built_in">NSMutableArray</span> *allFiles = [<span class="built_in">NSMutableArray</span> arrayWithCapacity:<span class="number">40</span>];
-</code></pre><h2 id="//5-查找当前用木目录下得文件">//5.查找当前用木目录下得文件</h2><pre><code>NSString *fileName ;
-<span class="keyword">while</span> (fileName = [dirEnum nextObject]) {
-   NSString *fileExt = [fileName pathExtension];<span class="comment">//得到文件的扩展名</span>
-   <span class="keyword">if</span> ([fileExt <span class="string">isEqualToString:</span>@<span class="string">"mp3"</span>]) { <span class="comment">//如果文件的扩展名是“mp3"，在这里没有MP3，先获取MP4</span>
-       [allFiles <span class="string">addObject:</span>fileName]; <span class="comment">//如果是，则将该文件名添加到数组中</span>
-   }
-   }
-</code></pre><h2 id="//6-遍历数组，将文件名全部打印出来">//6.遍历数组，将文件名全部打印出来</h2><pre><code><span class="keyword">for</span> (<span class="type">NSString</span> *<span class="literal">result</span> <span class="keyword">in</span> allFiles) {
- <span class="type">NSLog</span>(@<span class="string">"%@"</span>,<span class="literal">result</span>);
- }
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/字典/" data-id="ci9bejm1l0007r1rm6uuuen4t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/龙女幸甚/" data-id="ci9betjmc0001uormrlgy0i5b" class="article-share-link">Share</a>
       
       
     </footer>
@@ -707,7 +973,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/画图/" data-id="ci9bejm1g0003r1rm7je6xbpo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/画图/" data-id="ci9betjmg0004uormemkh43qg" class="article-share-link">Share</a>
       
       
     </footer>
@@ -865,121 +1131,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/字符串与数组/" data-id="ci9bejm1k0006r1rmpfkw7g0r" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-复合" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/30/复合/" class="article-date">
-  <time datetime="2015-04-30T02:08:49.000Z" itemprop="datePublished">2015-04-30</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/30/复合/">复合</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="复合与继承">复合与继承</h1><h3 id="1-继承">1.继承</h3><pre><code>  在采用过程式的设计思想时，会出现许多重复的代码，
-极大的，降低了执行效率，为此，将这些重复的代码抽取出来
-，抽象化一个公有的类，这个类包含有一些类共有的属性、方法
-然后就可以根据需求创建一些具体的类，继承该类，
-则子类默认包含该类的实例变量，以及公有方法，
-而且子类可以复写该类提供的一些方法。
-    如：可以复写根类NSObjecr类的
-<span class="keyword">description</span>方法。这样可以极大的减少重复的代码，提高效率。
-</code></pre><h3 id="2-self_super关键字">2.self  super关键字</h3><pre><code>   <span class="keyword">self</span>关键字是一个指针，指当向对象发出消息调用方法时，
-在调用这个方法中，会隐藏传入一个<span class="keyword">self</span>指针，
-   这个<span class="keyword">self</span>指针就是代表这个消息的调用者。有时候在类的方法中，
-可以用<span class="keyword">self</span>代替类的具体对象，如[<span class="keyword">self</span> 类的方法]等等，
-   有了<span class="keyword">self</span>，则在子类中可以访问父类的属性，］、即子类会默认继承父类的属性和方法。］、    
-   在调用<span class="keyword">init</span>方法时，指向调用<span class="keyword">init</span>方法的对象。
-   子类想要初始化成功，父类也必须初始化完成。
-   有时候，需在子类中调用父类方法，此时，<span class="keyword">super</span> 代表父类，
-   但要注意，<span class="keyword">super</span> 既非指针，又不是成员变量，
- 只是编辑器识别的指令，用于子类访问父类的内容
-</code></pre><h3 id="3-OC中方法调度的机制">3.OC中方法调度的机制</h3><pre><code>在OC中，当一个类发布一条消息，要调用某个方法，
-则在编译过程中会默认先在该类中查找该方法的具体实现代码，
-如果有就执行该类的方法，如果在本类中没有该方法的具体实现，
-则会沿着继承链一级一级的向上查找该类的父类直至根<span class="built_in">NSObject</span>
-类中是否有该方法的具体实现，如果有则执行，如果都没有，
-编译器会提出警告，如果还强制执行，则程序就会崩溃。
-</code></pre><h3 id="4-super关键字">4.super关键字</h3><pre><code><span class="keyword">super</span>既不是指针，也不是实例变量，在子类中如果想
-显式的调用父类中的方法，则可以使用<span class="keyword">super</span>关键字 如：[<span class="keyword">super</span> 父类的方法]
-</code></pre><h3 id="5-%@_打印当前调用的对象，即调用该类的description方法，返回当前对象的字符串">5.%@ 打印当前调用的对象，即调用该类的description方法，返回当前对象的字符串</h3><h3 id="6-@class:前向声明_采用该方法，可以不用import引入头文件">6.@class:前向声明 采用该方法，可以不用import引入头文件</h3><h3 id="7-组合和聚合">7.组合和聚合</h3><pre><code> 聚合：表示一种比较弱的整体和部分的关系。
- 如 大雁和雁群、    汽车和轮胎，离开汽车，
-轮胎还是一个独立的对象，这种关系就叫做聚合。
-组合：表示一种很强烈、严重的整体和部分的关系，
- 如鸟和翅膀，翅膀离开了鸟，就不是一个独立的对象，
- 已经失去了意义。这种情况下就叫做组合关系
-继承 is <span class="literal">a</span>    与      复合has <span class="literal">a</span>
-</code></pre><h3 id="8-NSLog：和printf函数一样，用来打印语句，在控制台显示">8.NSLog：和printf函数一样，用来打印语句，在控制台显示</h3><h3 id="9-@class_前向声明">9.@class  前向声明</h3><pre><code>一般在类的声明中，只需让编译器知道有这样的标识符，
- 而无需类的详细信息。
-</code></pre>
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/30/复合/" data-id="ci9bejm1o0009r1rmzhqjvr6a" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-大道生" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/04/16/大道生/" class="article-date">
-  <time datetime="2015-04-16T06:28:33.000Z" itemprop="datePublished">2015-04-16</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/04/16/大道生/">大道生</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>《德可延年》明代养生家吕坤说：【仁者可寿，德可延年，养德尤养生第一要义。】明确提出了要把道德修养、品德仁爱作为养生的准则。</p>
-<p>《安可静心》宋代文学家苏东坡认为：养生在于【安】、【和】二字。【安】即静心，【和】则顺心。【安则物之感我者轻，和则我之应物者顺】就是说，一个人对世界万物要有安和心态，以达到物我相宜之养生境界。</p>
-<p>《形神兼养》孔子曰：【君子有三戒，少之时，血气未定，戒之在色；及其壮也，血气方刚，戒之在斗；及其老也，血气既养，戒之在得。】意指养生非一朝一夕，乃贯穿人之一生，要行为检点，了解得失。</p>
-<p>《慎动寡欲》明代医学家万密斋提出养生之法有四：【一曰寡欲，慎动，三曰法时，四曰却疾】即从保健的角度说，人要节制性欲，谨慎行事，顺应时节，去除生病的隐患。</p>
-<p>《审因施养》宋代名人周守忠说：【知喜怒之损性，故豁情以宽心；知思虑之销神，故损情而内守；知语烦之侵气，故闭口而忘言；知哀乐之损寿，故抑之而不有，知情欲之窃命，故忍之而不为。五之养生勿要使七情六欲宣泄】</p>
-<p>《节怒养肝》明代医学家汪绮石说：【节嗜欲以养生，节烦恼以养神，节愤怒以养肝，节辛勤以养力，节思虑以养心，节悲哀以养肺】养生重在养身，养身即养好人的【精、气、神】。</p>
-<p>《以看养血》看些有益的书籍、电视节目以及观看山水风景等，可以使人精神愉快、脾胃健康，血液生化也就充盛，这就是【视养血】的道理。不过【久视则伤血】，必须重视掌握分寸。另外还应注意身体的保暖和膳食的营养搭配，保持气血充足。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/16/大道生/" data-id="ci9bejm1n0008r1rm33p1v4yx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/30/字符串与数组/" data-id="ci9betjmk0007uormovwv5kr8" class="article-share-link">Share</a>
       
       
     </footer>
@@ -1008,7 +1160,7 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -1020,23 +1172,23 @@ CTM（current transformation matrix）变换，这种变换比较简单，函数
       <ul>
         
           <li>
+            <a href="/2015/05/04/字符串/">字符数组</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/04/字典/">字典</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/04/类别/">类别</a>
+          </li>
+        
+          <li>
             <a href="/2015/04/30/协议/">协议</a>
           </li>
         
           <li>
             <a href="/2015/04/30/内存管理/">内存管理</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/OC/">OC</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/实现/">实现</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/龙女幸甚/">龙女幸甚</a>
           </li>
         
       </ul>

@@ -61,6 +61,120 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-复合" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/30/复合/" class="article-date">
+  <time datetime="2015-04-30T02:08:49.000Z" itemprop="datePublished">2015-04-30</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/30/复合/">复合</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="复合与继承">复合与继承</h1><h3 id="1-继承">1.继承</h3><pre><code>  在采用过程式的设计思想时，会出现许多重复的代码，
+极大的，降低了执行效率，为此，将这些重复的代码抽取出来
+，抽象化一个公有的类，这个类包含有一些类共有的属性、方法
+然后就可以根据需求创建一些具体的类，继承该类，
+则子类默认包含该类的实例变量，以及公有方法，
+而且子类可以复写该类提供的一些方法。
+    如：可以复写根类NSObjecr类的
+<span class="keyword">description</span>方法。这样可以极大的减少重复的代码，提高效率。
+</code></pre><h3 id="2-self_super关键字">2.self  super关键字</h3><pre><code>   <span class="keyword">self</span>关键字是一个指针，指当向对象发出消息调用方法时，
+在调用这个方法中，会隐藏传入一个<span class="keyword">self</span>指针，
+   这个<span class="keyword">self</span>指针就是代表这个消息的调用者。有时候在类的方法中，
+可以用<span class="keyword">self</span>代替类的具体对象，如[<span class="keyword">self</span> 类的方法]等等，
+   有了<span class="keyword">self</span>，则在子类中可以访问父类的属性，］、即子类会默认继承父类的属性和方法。］、    
+   在调用<span class="keyword">init</span>方法时，指向调用<span class="keyword">init</span>方法的对象。
+   子类想要初始化成功，父类也必须初始化完成。
+   有时候，需在子类中调用父类方法，此时，<span class="keyword">super</span> 代表父类，
+   但要注意，<span class="keyword">super</span> 既非指针，又不是成员变量，
+ 只是编辑器识别的指令，用于子类访问父类的内容
+</code></pre><h3 id="3-OC中方法调度的机制">3.OC中方法调度的机制</h3><pre><code>在OC中，当一个类发布一条消息，要调用某个方法，
+则在编译过程中会默认先在该类中查找该方法的具体实现代码，
+如果有就执行该类的方法，如果在本类中没有该方法的具体实现，
+则会沿着继承链一级一级的向上查找该类的父类直至根<span class="built_in">NSObject</span>
+类中是否有该方法的具体实现，如果有则执行，如果都没有，
+编译器会提出警告，如果还强制执行，则程序就会崩溃。
+</code></pre><h3 id="4-super关键字">4.super关键字</h3><pre><code><span class="keyword">super</span>既不是指针，也不是实例变量，在子类中如果想
+显式的调用父类中的方法，则可以使用<span class="keyword">super</span>关键字 如：[<span class="keyword">super</span> 父类的方法]
+</code></pre><h3 id="5-%@_打印当前调用的对象，即调用该类的description方法，返回当前对象的字符串">5.%@ 打印当前调用的对象，即调用该类的description方法，返回当前对象的字符串</h3><h3 id="6-@class:前向声明_采用该方法，可以不用import引入头文件">6.@class:前向声明 采用该方法，可以不用import引入头文件</h3><h3 id="7-组合和聚合">7.组合和聚合</h3><pre><code> 聚合：表示一种比较弱的整体和部分的关系。
+ 如 大雁和雁群、    汽车和轮胎，离开汽车，
+轮胎还是一个独立的对象，这种关系就叫做聚合。
+组合：表示一种很强烈、严重的整体和部分的关系，
+ 如鸟和翅膀，翅膀离开了鸟，就不是一个独立的对象，
+ 已经失去了意义。这种情况下就叫做组合关系
+继承 is <span class="literal">a</span>    与      复合has <span class="literal">a</span>
+</code></pre><h3 id="8-NSLog：和printf函数一样，用来打印语句，在控制台显示">8.NSLog：和printf函数一样，用来打印语句，在控制台显示</h3><h3 id="9-@class_前向声明">9.@class  前向声明</h3><pre><code>一般在类的声明中，只需让编译器知道有这样的标识符，
+ 而无需类的详细信息。
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/30/复合/" data-id="ci9betjmq000buormdm0995ro" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-大道生" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/04/16/大道生/" class="article-date">
+  <time datetime="2015-04-16T06:28:33.000Z" itemprop="datePublished">2015-04-16</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/04/16/大道生/">大道生</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>《德可延年》明代养生家吕坤说：【仁者可寿，德可延年，养德尤养生第一要义。】明确提出了要把道德修养、品德仁爱作为养生的准则。</p>
+<p>《安可静心》宋代文学家苏东坡认为：养生在于【安】、【和】二字。【安】即静心，【和】则顺心。【安则物之感我者轻，和则我之应物者顺】就是说，一个人对世界万物要有安和心态，以达到物我相宜之养生境界。</p>
+<p>《形神兼养》孔子曰：【君子有三戒，少之时，血气未定，戒之在色；及其壮也，血气方刚，戒之在斗；及其老也，血气既养，戒之在得。】意指养生非一朝一夕，乃贯穿人之一生，要行为检点，了解得失。</p>
+<p>《慎动寡欲》明代医学家万密斋提出养生之法有四：【一曰寡欲，慎动，三曰法时，四曰却疾】即从保健的角度说，人要节制性欲，谨慎行事，顺应时节，去除生病的隐患。</p>
+<p>《审因施养》宋代名人周守忠说：【知喜怒之损性，故豁情以宽心；知思虑之销神，故损情而内守；知语烦之侵气，故闭口而忘言；知哀乐之损寿，故抑之而不有，知情欲之窃命，故忍之而不为。五之养生勿要使七情六欲宣泄】</p>
+<p>《节怒养肝》明代医学家汪绮石说：【节嗜欲以养生，节烦恼以养神，节愤怒以养肝，节辛勤以养力，节思虑以养心，节悲哀以养肺】养生重在养身，养身即养好人的【精、气、神】。</p>
+<p>《以看养血》看些有益的书籍、电视节目以及观看山水风景等，可以使人精神愉快、脾胃健康，血液生化也就充盛，这就是【视养血】的道理。不过【久视则伤血】，必须重视掌握分寸。另外还应注意身体的保暖和膳食的营养搭配，保持气血充足。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/04/16/大道生/" data-id="ci9betjmo000auormm6tck33j" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-继承，多态与复合" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/04/14/继承，多态与复合/" class="article-date">
@@ -150,7 +264,7 @@ OC对象具有多态性
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/14/继承，多态与复合/" data-id="ci9bejm1e0002r1rmqix1npf3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/14/继承，多态与复合/" data-id="ci9betjmd0002uorms2rkffwe" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,7 +335,7 @@ OC对象具有多态性
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/04/10/block/" data-id="ci9bejm1s000cr1rmjo4r3i7n" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/04/10/block/" data-id="ci9betjmu000euormil7vjfwr" class="article-share-link">Share</a>
       
       
     </footer>
@@ -269,7 +383,7 @@ OC对象具有多态性
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/30/拷贝/" data-id="ci9bejm1h0004r1rmaoo89rtr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/30/拷贝/" data-id="ci9betjmh0005uormkucp3wxl" class="article-share-link">Share</a>
       
       
     </footer>
@@ -337,7 +451,7 @@ OC对象具有多态性
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/02/KVC/" data-id="ci9bejm130000r1rmenar5xxa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/02/KVC/" data-id="ci9betjlu0000uormvmol65rj" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +480,7 @@ OC对象具有多态性
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">12</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -378,23 +492,23 @@ OC对象具有多态性
       <ul>
         
           <li>
+            <a href="/2015/05/04/字符串/">字符数组</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/04/字典/">字典</a>
+          </li>
+        
+          <li>
+            <a href="/2015/05/04/类别/">类别</a>
+          </li>
+        
+          <li>
             <a href="/2015/04/30/协议/">协议</a>
           </li>
         
           <li>
             <a href="/2015/04/30/内存管理/">内存管理</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/OC/">OC</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/实现/">实现</a>
-          </li>
-        
-          <li>
-            <a href="/2015/04/30/龙女幸甚/">龙女幸甚</a>
           </li>
         
       </ul>
