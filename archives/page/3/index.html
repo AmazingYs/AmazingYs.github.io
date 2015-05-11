@@ -8,7 +8,7 @@
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/page/3/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -79,20 +79,19 @@
       
       <div class="article-meta">
         <p class="category"></p>
-        <p class="date"><time datetime="2015-05-04T07:40:54.000Z" itemprop="datePublished">2015-05-04</time></p>
+        <p class="date"><time datetime="2015-04-14T13:14:39.000Z" itemprop="datePublished">2015-04-14</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/05/04/字符串/" class="title">字符数组</a>
+        <a href="/2015/04/14/继承，多态与复合/" class="title">继承，多态与复合</a>
       </h2>
       <p class="article-excerpt">
         
-        Foundition框架11. OC集合只能存储OC对象，不能存储c语言中的基本数据类型，如int，float，enum，struct，且不能在集合中存储nil。
-字符串
-不可变字符串 ： NSString *string1;
-可变字符串 ：  NSMutableString *string2;
- 对可变字符串的操作：
- 2.1 增加元素 
- string2 appendFormat:@&amp;quot
+        继承
+继承的概念
+1. is－a机制
+2. 即当创建的多个类有共同的属性和行为时，可以抽出一个类作为父类，在父类中定义相同的属性，声明实现相同的行为（方法）；
+3. 子类可以使用父类的所有属性和方法，并且子类可以在父类的基础上拓补自己的属性和方法，包括重写父类方法。重写父类方法时，子类对象会优先调用子类重写后的方法。
+4. 子类属性和方法访问的过程： 如果子类没有相应的方法或属性，则去访问父类，一
       </p>
     </div>
   </article>
@@ -105,18 +104,21 @@
       
       <div class="article-meta">
         <p class="category"></p>
-        <p class="date"><time datetime="2015-05-04T05:40:54.000Z" itemprop="datePublished">2015-05-04</time></p>
+        <p class="date"><time datetime="2015-04-10T13:29:57.000Z" itemprop="datePublished">2015-04-10</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/05/04/字典/" class="title">字典</a>
+        <a href="/2015/04/10/block/" class="title">block</a>
       </h2>
       <p class="article-excerpt">
         
-        Foundition框架字典
-不可变数组 ： NSDictionary  *dictionary1;
-可变数组 ： NSMutableDictionary  *dictionary2;
- 字典初始化：
- Dictionary *dictionary1 = [NSDictionary dictionaryWithObjectsAndKeys:str1,@&amp;quot;hello&amp;quot;,str2,
+        BLOCK
+基本概念
+ 代码块本质上是和其他变量类似。不同的是，代码块存储的数据是一个函数体。使用代码块时，可以像调用其他标准函数一样，传入参数数，并得到返回值。    
+
+
+* Block封装了一段代码,可以在任何时候执行
+* Block可以作为函数参数或者函数的返回值，而其本身又可以带输入参数或返回值。
+* 苹果官方建议尽量多用block。在多线程、异步任务、集合遍历、集合排序、动画转场用的很
       </p>
     </div>
   </article>
@@ -133,99 +135,23 @@
       
       <div class="article-meta">
         <p class="category"></p>
-        <p class="date"><time datetime="2015-05-04T05:36:53.000Z" itemprop="datePublished">2015-05-04</time></p>
+        <p class="date"><time datetime="2015-03-30T13:23:29.000Z" itemprop="datePublished">2015-03-30</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/05/04/类别/" class="title">类别</a>
+        <a href="/2015/03/30/拷贝/" class="title">拷贝</a>
       </h2>
       <p class="article-excerpt">
         
-        类别
-类别的简述
+        拷贝
+浅拷贝（shallow copy）
+ 不会复制所引用的对象，新复制的对象只会指向现有的引用对象上。（引用计数加 1 ，地址不变）
 
-为现有的类（自定义的类、第三方的类或者是系统定义的类）添加一些新的行为；
-类别可以解决继承不能为累簇添加新方法的问题。
-
-
-类别的声明和实现
- 格式： 类名 ＋ 类别名
- 如：为NSString 创建一个类别 NSString＋NumberConvenience；
- 只要保证类别名称唯一，可以向一个类中添加任意数量的类别。
- 声明：
- @interface NSString （
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-04-30T13:27:37.000Z" itemprop="datePublished">2015-04-30</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/30/协议/" class="title">协议</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        协议
-基本用途
-
-可以用来声明一大堆方法（不能声明成员变量）
-只要某个类遵守了这个协议，就相当于拥有这个协议中的所有方法声明
-只要父类遵守了某个协议，就相当于子类也遵守了    
-
-
-格式 @protocol 协议名
- 方法声明列表
- @end
- 某个类遵守某个协议
- @interface 类名 : 父类名&amp;lt;协议名&amp;gt;
- @end
+深拷贝（deep copy）
+ 真正意义的复制概念。得到的结果是多个，而非只是对象的引用。（引用计数 不变 ，地址发生变化）
 
 关键字
- 协议中有2个关键字可以控制方法是否要实现（默
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-04-30T13:25:44.000Z" itemprop="datePublished">2015-04-30</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/04/30/内存管理/" class="title">内存管理</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        内存管理内存管理机制：引用计数
-
-引用计数的计算
-
-alloc 、new 、copy(copy生成接收对象的一个副本) //使用这三个方法创建对象时，对象的引用计数器为1
-
-(id) retain; //给对象发送retain消息后，对象的引用计数器加1
-
-
-
-(void) release; //给对像发送release消息后，对象的引用计数器减1
-
-
--(void)dealloc; //当一个对
+ copy：对不可变的集合copy为浅拷贝，对可变的集合copy为深拷贝
+ mutableCopy：对可变的或不可变的集合mu
       </p>
     </div>
   </article>
@@ -238,18 +164,27 @@ alloc 、new 、copy(copy生成接收对象的一个副本) //使用这三个方
       
       <div class="article-meta">
         <p class="category"></p>
-        <p class="date"><time datetime="2015-04-30T03:49:42.000Z" itemprop="datePublished">2015-04-30</time></p>
+        <p class="date"><time datetime="2015-03-02T13:31:21.000Z" itemprop="datePublished">2015-03-02</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/04/30/OC/" class="title">OC</a>
+        <a href="/2015/03/02/KVC/" class="title">KVC</a>
       </h2>
       <p class="article-excerpt">
         
-        
-NSLog 与 printf的不同1. NSLog接收oc字符串作为参数，printf接收c语言的字符串作为参数
-2. NSLog输出后会自动换行，printf在输出后不会自动换行
-3. 使用NSLog时，需要包含头文件#import &amp;lt;Foundition/Foundition.h&amp;gt;；而使用printf时，需要包含头文件#include&amp;lt;stdio.h&amp;gt;
-4. NSLo
+        KVC（Key Valuble Coding）
+基本概念
+是一种间接更改对象状态（或者说是属性值）的方式：key-value coding 简称KVC.
+主要本质特点是采用字符串来标识对象的属性变量，并可以利用这个标识来更改对象的状态（或者说是属性值）
+
+
+基本用法
+
+
+(id)valueForKey:(NSString *)key //以key作为标识符，获取其对应的属性值
+
+
+
+(void)s
       </p>
     </div>
   </article>
@@ -260,8 +195,8 @@ NSLog 与 printf的不同1. NSLog接收oc字符串作为参数，printf接收c�
   
   
     <nav id="page-nav">
-      <span class="pages">第 1 页，共 3 页</span>
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="page-number" href="/archives/page/3/">3</a><a class="extend next" rel="next" href="/archives/page/2/">&raquo;</a>
+      <span class="pages">第 3 页，共 3 页</span>
+      <a class="extend prev" rel="prev" href="/archives/page/2/">&laquo;</a><a class="page-number" href="/archives/">1</a><a class="page-number" href="/archives/page/2/">2</a><span class="page-number current">3</span>
     </nav>
   
 
