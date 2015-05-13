@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Archives: 2015/3 | Hexo</title>
+  <title>Archives: 2015/1 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2015/03/index.html">
+<meta property="og:url" content="http://yoursite.com/archives/2015/01/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description">
 <meta name="twitter:card" content="summary">
@@ -67,7 +67,7 @@
           <section id="main">
             <div class="main-body-header">
 
-              <h1 class="header"><i class="icon" id="icon-archive"></i>归档: 2015/3</h1>
+              <h1 class="header"><i class="icon" id="icon-archive"></i>归档: 2015/1</h1>
             </div>
             <div class="main-body-content">
               
@@ -79,105 +79,17 @@
       
       <div class="article-meta">
         <p class="category"></p>
-        <p class="date"><time datetime="2015-03-30T13:23:29.000Z" itemprop="datePublished">2015-03-30</time></p>
+        <p class="date"><time datetime="2015-01-14T13:14:39.000Z" itemprop="datePublished">2015-01-14</time></p>
       </div>
       <h2 class="article-title">
-        <a href="/2015/03/30/拷贝/" class="title">拷贝</a>
+        <a href="/2015/01/14/nil与null/" class="title">nil与NUll</a>
       </h2>
       <p class="article-excerpt">
         
-        拷贝
-浅拷贝（shallow copy）
- 不会复制所引用的对象，新复制的对象只会指向现有的引用对象上。（引用计数加 1 ，地址不变）
-
-深拷贝（deep copy）
- 真正意义的复制概念。得到的结果是多个，而非只是对象的引用。（引用计数 不变 ，地址发生变化）
-
-关键字
- copy：对不可变的集合copy为浅拷贝，对可变的集合copy为深拷贝
- mutableCopy：对可变的或不可变的集合mu
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-03-20T13:31:21.000Z" itemprop="datePublished">2015-03-20</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/03/20/uilabel/" class="title">UILabel</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        UILabel 文本：text NSString 字体：font UIFont 字体颜色：textColor UIColor 字体对齐方式：textAlignment NSTextAlignment 文本截断方式：lineBreakMode NSLineBreakMode       
-  是否启用：enabled  BOOL 
- 字体大小随label宽度自适应：adjustsFontSizeTo
-      </p>
-    </div>
-  </article>
-
-    
-      </div>
-    
-  
-      <div class="article-row">
-    
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-03-14T13:14:39.000Z" itemprop="datePublished">2015-03-14</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/03/14/kvc误点/" class="title">KVC误点</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        setValue：forKey 和 setObject：forKey在使用NSMutableDictionary的时候经常会使用setValue forKey与setObject forKey
-1。setValue： forKey：
-发送setObject:forKey 给接收者，也就是调用setObject:forKey方法
-除非value为nil的时候，调用方法removeObject:for
-      </p>
-    </div>
-  </article>
-
-    
-  
-        
-  <article class="article article-summary">
-    <div class="article-summary-inner">
-      
-      <div class="article-meta">
-        <p class="category"></p>
-        <p class="date"><time datetime="2015-03-02T13:31:21.000Z" itemprop="datePublished">2015-03-02</time></p>
-      </div>
-      <h2 class="article-title">
-        <a href="/2015/03/02/KVC/" class="title">KVC</a>
-      </h2>
-      <p class="article-excerpt">
-        
-        KVC（Key Valuble Coding）
-基本概念
-是一种间接更改对象状态（或者说是属性值）的方式：key-value coding 简称KVC.
-主要本质特点是采用字符串来标识对象的属性变量，并可以利用这个标识来更改对象的状态（或者说是属性值）
-
-
-基本用法
-
-
-(id)valueForKey:(NSString *)key //以key作为标识符，获取其对应的属性值
-
-
-
-(void)s
+        总述nil用来给对象赋值（Object-C的任何对象都属于id类型），
+NULL则给任何指针赋值，NULL和nil不能互换，nil用于类指针赋值（在Object-C中类是一个对象，是类的meta-class的实例），
+而NSNull则用于集合操作，虽然它们表示的都是空值，但是使用场合完全不同，所以在编码时严格按照变量类型来赋值，将正确的空值赋给正确的类型，使代码易于阅读和维护，也不易引起错误。
+1
       </p>
     </div>
   </article>
