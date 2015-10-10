@@ -61,6 +61,72 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-kvc误点" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/14/kvc误点/" class="article-date">
+  <time datetime="2015-03-14T13:14:39.000Z" itemprop="datePublished">2015-03-14</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/14/kvc误点/">KVC误点</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="setValue：forKey_和_setObject：forKey">setValue：forKey 和 setObject：forKey</h3><pre><code>在使用NSMutableDictionary的时候经常会使用<span class="built_in">set</span>Value <span class="keyword">for</span>Key与<span class="built_in">set</span>Object <span class="keyword">for</span>Key
+<span class="number">1</span>。<span class="built_in">set</span>Value： <span class="keyword">for</span>Key：
+发送<span class="built_in">set</span>Object:<span class="keyword">for</span>Key 给接收者，也就是调用<span class="built_in">set</span>Object:<span class="keyword">for</span>Key方法
+除非value为nil的时候，调用方法removeObject:<span class="keyword">for</span>Key
+
+<span class="number">2</span>。<span class="built_in">set</span>Object：<span class="keyword">for</span>Key：
+Key的对象是一个id类型，并不是NSString，只不过我们经常使用NSString而已。
+</code></pre><h4 id="区别：">区别：</h4><pre><code><span class="number">1</span>.<span class="built_in">set</span>Object：forkey：中value是不能够为nil的，不然会报错。
+  <span class="built_in">set</span>Value：<span class="keyword">for</span>Key：中value能够为nil，当value为nil的时候，自动调用removeObject：<span class="keyword">for</span>Key方法
+
+<span class="number">2</span>.<span class="built_in">set</span>Value：<span class="keyword">for</span>Key：中key的参数只能够是NSString
+  <span class="built_in">set</span>Object：<span class="keyword">for</span>Key：的可以是任何类型
+
+!!!注意：<span class="built_in">set</span>Object：<span class="keyword">for</span>Key：对象不能存放nil要与下面的这种情况区分：
+<span class="number">1</span>.[imageDictionarysetObject:[NSNullnull] <span class="keyword">for</span>Key:indexNumber];
+[NSNull null]表示的是一个空对象，并不是nil
+
+<span class="number">2</span>.<span class="built_in">set</span>Object：<span class="keyword">for</span>Key：中Key是NSNumber对象的时候，如下：
+[imageDictionarysetObject:obj <span class="keyword">for</span>Key:[NSNumber numberWithInt：<span class="number">10</span>]];
+</code></pre><h4 id="注意：">注意：</h4><pre><code>  上面说的区别是针对调用者是dictionary而言的。
+
+<span class="built_in">set</span>Object:<span class="keyword">for</span>Key:方法NSMutabledictionary特有的
+<span class="built_in">set</span>Value:<span class="keyword">for</span>Key:方法是KVC（键-值编码）的主要方法。
+
+当 <span class="built_in">set</span>Value:<span class="keyword">for</span>Key:方法调用者是对象的时候：
+<span class="built_in">set</span>Value:<span class="keyword">for</span>Key:方法是在NSObject对象中创建的，也就是说所有的oc对象都有这个方法，所以可以用于任何类。
+             比如使用:
+  SomeClass *someObj = [[SomeClass alloc] init];
+[someObj <span class="built_in">set</span>Value:<span class="literal">self</span> <span class="keyword">for</span>Key:@<span class="string">"delegate"</span>];
+表示的意思是：对象someObj设置他的delegate属性的值为当前类，当然调用此方法的对象必须要有delegate属性才能设置，不然调用了也没效果
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2015/03/14/kvc误点/" data-id="cifkj0t16000jiao1tpynycgr" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-KVC" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/02/KVC/" class="article-date">
@@ -119,7 +185,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/03/02/KVC/" data-id="cifkhimrt00007yo1ckr05r3x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/03/02/KVC/" data-id="cifkj0szm0000iao1yd5azezf" class="article-share-link">Share</a>
       
       
     </footer>
@@ -259,7 +325,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/02/10/uitableview/" data-id="cifkhimsw000f7yo1gc17owxy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/02/10/uitableview/" data-id="cifkj0t0y000fiao138i4rhum" class="article-share-link">Share</a>
       
       
     </footer>
@@ -327,7 +393,7 @@ person=<span class="literal">nil</span>;
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/01/14/nil与null/" data-id="cifkhimsz000h7yo1fegltxeh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2015/01/14/nil与null/" data-id="cifkj0t14000iiao17o87ogxx" class="article-share-link">Share</a>
       
       
     </footer>
@@ -356,7 +422,7 @@ person=<span class="literal">nil</span>;
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/10/">October 2015</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/05/">May 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/04/">April 2015</a><span class="archive-list-count">11</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/02/">February 2015</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/01/">January 2015</a><span class="archive-list-count">1</span></li></ul>
     </div>
   </div>
 
@@ -366,6 +432,10 @@ person=<span class="literal">nil</span>;
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2015/10/10/pxx/">@pxx</a>
+          </li>
         
           <li>
             <a href="/2015/10/10/caoyujian/">@caoyujian</a>
@@ -381,10 +451,6 @@ person=<span class="literal">nil</span>;
         
           <li>
             <a href="/2015/05/04/字符串/">字符数组</a>
-          </li>
-        
-          <li>
-            <a href="/2015/05/04/字典/">字典</a>
           </li>
         
       </ul>
